@@ -1,10 +1,13 @@
 import "babel-polyfill";
 import React, {Component} from 'react';
-import MHeader from "../../pubComponents/MHeader/index";
 import Banner from "../../pubComponents/Banner/index";
+import './index.less'
 import {connect} from 'react-redux'
 import actions from "../../store/action/home";
-import Recommend from "../../pubComponents/Recommend/index";
+import HomeHeader from "./HomeHeader";
+import SearchBar from "./SearchBar";
+import Warning from "./Warning";
+import HomeMain from "./HomeMain";
 
 class Home extends Component {
 
@@ -15,12 +18,16 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <MHeader title={{title: '首页'}}/>
+               <HomeHeader/>
                 <div className="content">
-                    <Banner swiper={this.props.swiper}/>
-                    <Recommend/>
+                <SearchBar/>
+                <Warning/>
+                    <div className="home-swipe">
+                        <Banner swiper={this.props.swiper}/>
+                    </div>
+                <HomeMain/>
                 </div>
-            </div>
+                </div>
         )
     }
 }

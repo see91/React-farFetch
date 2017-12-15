@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import NavLink from "react-router-dom/es/NavLink";
-
+import '../style/tab.less'
 export default class Tab extends Component {
     render() {
         return (

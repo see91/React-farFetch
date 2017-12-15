@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let uu = 'http://localhost:6066/swiper';
+    let url = 'http://localhost:6066/recommlist';
+    let a = {name: 'huhu', age: 18};
+    fetch(uu).then(function (res) {
+        return res.json();
+    }).then(function (data) {
+        let c = 'coat';
+        fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `data=${c}`
+        }).then(function (res) {
+            return res.json();
+        }).then(function (data) {
+            console.log(data);
+        }).catch(function (e) {
+            console.log(e);
+        })
+    })
+</script>

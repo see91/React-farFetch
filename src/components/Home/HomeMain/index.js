@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import HomeMain1 from "./HomeMain1";
 import HomeMain2 from "./HomeMain2";
 import HomeMain3 from "./HomeMain3";
 import HomeMain4 from "./HomeMain4";

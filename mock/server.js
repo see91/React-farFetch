@@ -90,16 +90,31 @@ app.get('/recommend', (req, res) => {
  * 需要参数 classification 的分类
  */
 app.post('/recommlist', (req, res) => {
-    console.log(req.body.data);
-    res.send('hu2323hu')
+    let {classification, offset} = req.body;
+    read('./data/prdList.json', (data) => {
+        let prd = data.filter(item => item.classification == classification);
+        // let product = prd.slice(offset, offset + 5);
+        res.send(prd ? {code: 0, prd, success: `商品'${classification}'获取成功`} : {code: 1, error: '暂无该商品'});
+    });
 });
 /**
  * 返回所有商品数据
  */
+
 app.get('/prdlist', (req, res) => {
-    read('./data/prdList.json', (data) => {
-        res.send(data)
+    read('./data/prdList.json', (s) => {
+        res.send(s)
     })
+});
+
+/**
+ * 商品详情页数据
+ */
+app.post('/prddetail', (req, res) => {
+    let {id} = req.body;
+    read('./data/prdList.json', (data) => {
+        res.send(data.find(item => item.id == id) ? data.find(item => item.id == id) : '暂无该商品')
+    });
 });
 
 app.listen(6066, () => {

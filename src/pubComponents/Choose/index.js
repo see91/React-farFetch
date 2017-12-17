@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './index.less';
-import boom from '../../../../static/img/3.jpg'
-export default class HomeMain1 extends Component{
+import boom from '../../static/img/3.jpg'
+export default class Choose extends Component{
     render(){
         return (
             <div className="home-main">

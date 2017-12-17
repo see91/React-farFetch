@@ -5,7 +5,7 @@ import './index.less'
 import {connect} from 'react-redux'
 import actions from "../../store/action/home";
 import HomeHeader from "./HomeHeader";
-import SearchBar from "./SearchBar";
+import SearchBar from "../../pubComponents/SearchBar";
 import Warning from "./Warning";
 import HomeMain from "./HomeMain";
 

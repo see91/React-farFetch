@@ -8,7 +8,6 @@ let initState = {
 export default function (state = initState, action) {
     switch (action.type) {
         case types.GET_DATALIST:
-            console.log(action.payload);
             return {
                 ...state,
                 getList: action.payload

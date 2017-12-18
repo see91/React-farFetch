@@ -97,10 +97,10 @@ app.post('/recommlist', (req, res) => {
         res.send(prd ? {code: 0, prd, success: `商品'${classification}'获取成功`} : {code: 1, error: '暂无该商品'});
     });
 });
+
 /**
  * 返回所有商品数据
  */
-
 app.get('/prdlist', (req, res) => {
     read('./data/prdList.json', (s) => {
         res.send(s)
@@ -112,9 +112,62 @@ app.get('/prdlist', (req, res) => {
  */
 app.post('/prddetail', (req, res) => {
     let {id} = req.body;
+    if (id) {
+        read('./data/prdList.json', (data) => {
+            res.send(data.find(item => item.id == id) ? data.find(item => item.id == id) : '暂无该商品')
+        });
+    } else {
+        res.send(404)
+    }
+});
+
+/**
+ * search
+ */
+app.post('/search', (req, res) => {
+    let {content} = req.body;
+    let ary = (new Array(1));
     read('./data/prdList.json', (data) => {
-        res.send(data.find(item => item.id == id) ? data.find(item => item.id == id) : '暂无该商品')
+        data.forEach(item => {
+            if (item.title.includes(content)) {
+                ary.push(item)
+            }
+        });
+        ary.shift();
+        res.send(ary)
     });
+});
+
+/**
+ * Collection 商品收藏
+ */
+app.post('/collection', (req, res) => {
+    let {id, isCollection} = req.body;
+    isCollection = !!isCollection;
+    let ary = [];
+    read('./data/prdList.json', (data) => {
+        let prd = data.find(item => item.id.toString() === id);
+        read('./data/collection.json', (data) => {
+            let collPrd = data.find(item => item.id.toString() === id);
+            if (collPrd && isCollection) {
+                res.send('收藏商品已存在!')
+            } else if (!collPrd && isCollection) {
+                data.push(prd);
+                write('./data/collection.json', data, () => {
+                });
+                res.send({code: 0, data, success: '商品收藏写入完成!'});
+            } else if (collPrd && !isCollection) {
+                data = data.filter(item => item.id.toString() !== id) || [];
+                write('./data/collection.json', data, () => {
+                });
+                res.send({code: 0, data, success: '删除收藏商品成功!'})
+            }
+            else if (!collPrd && !isCollection) {
+                res.send('收藏商品不存在!')
+            }
+        })
+    });
+
 });
 
 app.listen(6066, () => {

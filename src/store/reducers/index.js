@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux'
+import list from './list'
 import home from './home'
 
 let reducer = combineReducers({
-    home
+    home,list
 });
 
 export default reducer

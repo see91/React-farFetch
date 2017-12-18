@@ -1,9 +1,10 @@
 const GET_SLIDERS = 'GET_SLIDERS';
-
+const GET_DATALIST = 'GET_DATALIST';
 
 
 
 
 export {
-    GET_SLIDERS
+    GET_SLIDERS,
+    GET_DATALIST
 }

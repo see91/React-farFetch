@@ -11,7 +11,6 @@ class List extends Component {
     }
 
     render() {
-        console.log(this.props.getList);
         return (
             <div>
                 <MHeader title={{title: '列表页'}}/>

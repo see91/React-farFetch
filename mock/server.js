@@ -141,10 +141,34 @@ app.post('/search', (req, res) => {
 /**
  * Collection 商品收藏
  */
-app.post('/collection', (res, req) => {
-    let {id} = req.body;
-});
+app.post('/collection', (req, res) => {
+    let {id, isCollection} = req.body;
+    isCollection = !!isCollection;
+    let ary = [];
+    read('./data/prdList.json', (data) => {
+        let prd = data.find(item => item.id.toString() === id);
+        read('./data/collection.json', (data) => {
+            let collPrd = data.find(item => item.id.toString() === id);
+            if (collPrd && isCollection) {
+                res.send('收藏商品已存在!')
+            } else if (!collPrd && isCollection) {
+                data.push(prd);
+                write('./data/collection.json', data, () => {
+                });
+                res.send({code: 0, data, success: '商品收藏写入完成!'});
+            } else if (collPrd && !isCollection) {
+                data = data.filter(item => item.id.toString() !== id) || [];
+                write('./data/collection.json', data, () => {
+                });
+                res.send({code: 0, data, success: '删除收藏商品成功!'})
+            }
+            else if (!collPrd && !isCollection) {
+                res.send('收藏商品不存在!')
+            }
+        })
+    });
 
+});
 
 app.listen(6066, () => {
     console.log('server success!');

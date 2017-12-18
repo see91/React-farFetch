@@ -9,7 +9,7 @@ export default class HomeMain extends Component {
     render() {
         return (
             <div>
-            <Choose/>
+            <Choose choose={this.props.choose}/>
             <HomeMain2/>
             <HomeMain3/>
                 <HomeMain4/>

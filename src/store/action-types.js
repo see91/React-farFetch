@@ -1,10 +1,11 @@
 const GET_SLIDERS = 'GET_SLIDERS';
 const GET_DATALIST = 'GET_DATALIST';
-
+const GET_CHOOSE = 'GET_CHOOSE'
 
 
 
 export {
     GET_SLIDERS,
-    GET_DATALIST
+    GET_DATALIST,
+  GET_CHOOSE,
 }

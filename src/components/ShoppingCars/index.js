@@ -2,12 +2,45 @@ import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
 import './style/shopping.css'
 export default class ShoppingCars extends Component {
+    constructor(){
+        super();
+        this.state={
+            current:null,
+            shoppingCar:[],
+            totalNum:0,
+            total:0,
+        }
+    }
     render() {
         return (
             <div id="shopping">
                 <MHeader title={{title: '购物袋'}} back={true}/>
                 <div className='shopcarContent'>
                     <ul>
+                        <li className="Billing">
+                         <p className="Subtotal">小计:</p>
+                         <p className="TotalBill">总计：</p>
+                        </li>
+                        <li className="Products">
+                         <h5 className="Origins">一项商品产地来自美国</h5>
+                          <p className="THOM">THOMBROWNE</p>
+                          <p className="Numbering">:12423301</p>
+                            <button className="number">数量1</button>
+                          <span className="Join">☆加入愿望单</span>
+                          <span className="unitPrice">¥5,200.00</span>
+                        </li>
+                      
+
+
+
+
+
+
+
+
+
+
+
                         <li className="one">
                             <h4>14天无理由免费退货(退款含税)</h4>
                             <p>还在犹豫？别担心，我们提供14天无理由年费退货。</p>

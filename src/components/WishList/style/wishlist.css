@@ -1,0 +1,36 @@
+#headers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#headers img {
+  position: fixed;
+  display: inline-block;
+  width: 80%;
+  top: 243px;
+  left: 42px;
+}
+#headers p {
+  padding-top: 50px;
+  text-align: center;
+  color: #060606;
+  font-size: 20px;
+}
+#headers span {
+  display: inline-block;
+  text-align: center;
+  padding-top: 40px;
+  color: darkgray;
+  font-size: 18px;
+}
+#headers .btn {
+  position: fixed;
+  width: 100%;
+  bottom: 50px;
+  left: 0;
+  height: 40px;
+  line-height: 40px;
+  background-color: deepskyblue;
+  border: none;
+  color: white;
+}

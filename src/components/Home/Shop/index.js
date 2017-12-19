@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import MHeader from "../MHeader";
+import MHeader from "../../../pubComponents/MHeader/index";
 import './index.less'
 export default class Shop extends Component{
     render(){

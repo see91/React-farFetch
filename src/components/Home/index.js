@@ -18,16 +18,16 @@ class Home extends Component {
     render() {
         return (
             <div>
-               <HomeHeader/>
+                <HomeHeader/>
                 <div className="content">
-                <SearchBar/>
-                <Warning/>
+                    <SearchBar/>
+                    <Warning/>
                     <div className="home-swipe">
                         <Banner swiper={this.props.swiper}/>
                     </div>
-                <HomeMain/>
+                    <HomeMain/>
                 </div>
-                </div>
+            </div>
         )
     }
 }

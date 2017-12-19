@@ -6,11 +6,21 @@ import './index.less'
 import {Link} from 'react-router-dom'
 
 class List extends Component {
+    constructor() {
+        super();
+        this.state = {showList: false}
+    }
+
     componentDidMount() {
         this.props.getDatas()
     }
 
+    switchShow = () => {
+        this.setState({showList: !this.state.showList});
+    }
+
     render() {
+        console.log(this.props.getList);
         return (
             <div>
                 <MHeader title={{title: '列表页'}}/>
@@ -35,10 +45,27 @@ class List extends Component {
                             ))
                         }
 
-                    </div>
+                        <div className="list-group">
+                            {
 
+                                this.props.getList.map((item, index) => (
+                                    <Link key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
+                                        <div onClick={this.showList} className="iconfont icon-gray-star">
+                                        </div>
+                                        <div onClick={this.switchShow}>
+                                        </div>
+                                        <img src={item.url}/>
+                                        <p>{item.title}</p>
+                                        <b>￥{item.price}</b>
+                                    </Link>
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
         )
     }
 }

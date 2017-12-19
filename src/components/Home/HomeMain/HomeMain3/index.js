@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import yaodai from '../../../../static/img/3.jpg'
+import yaodai from '../../../../static/img/ck1.jpg'
 import './index.less'
 export default class HomeMain3 extends Component{
     render(){

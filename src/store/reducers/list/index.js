@@ -1,7 +1,8 @@
 import * as types from '../../action-types'
 
 let initState = {
-    getList: []
+    getList: [],
+    currentList:0
 };
 
 
@@ -12,6 +13,12 @@ export default function (state = initState, action) {
             return {
                 ...state,
                 getList: action.payload
+            };
+        case types.GET_CURRENTLIST:
+            console.log(action.payload);
+            return {
+                ...state,
+                currentList: action.payload
             };
         default:
             return state

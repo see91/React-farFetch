@@ -18,7 +18,10 @@ class List extends Component {
     switchShow = () => {
         this.setState({showList: !this.state.showList});
     }
-
+    // changeType=(event)=>{
+    //     let event=event.target.dataset.value;
+    //     this.props.changeType(type)
+    // }
     render() {
         console.log(this.props.getList);
         return (
@@ -32,27 +35,18 @@ class List extends Component {
                     <div className="container">
 
                         <h3>SALE|近4000件商品现有4折优惠</h3>
-
-                        {
-                            this.props.getList.map((item, index) => (
-                                <Link key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
-                                    <div className="list">
-                                        <img src={item.url}/>
-                                        <p>{item.title}</p>
-                                        <b>￥{item.price}</b>
-                                    </div>
-                                </Link>
-                            ))
-                        }
-
                         <div className="list-group">
                             {
 
                                 this.props.getList.map((item, index) => (
                                     <Link key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
                                         <div onClick={this.showList} className="iconfont icon-gray-star">
+                                            {/*{*/}
+                                            {/*this.state.showList?<div className="iconfont icon-gray-star"></div>:<div className="iconfont icon-gray-star"></div>*/}
+                                            {/*}*/}
                                         </div>
                                         <div onClick={this.switchShow}>
+
                                         </div>
                                         <img src={item.url}/>
                                         <p>{item.title}</p>
@@ -63,7 +57,6 @@ class List extends Component {
                         </div>
                     </div>
                 </div>
-
             </div>
 
         )

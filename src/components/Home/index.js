@@ -8,8 +8,6 @@ import HomeHeader from "./HomeHeader";
 import SearchBar from "../../pubComponents/SearchBar";
 import Warning from "./Warning";
 import HomeMain from "./HomeMain";
-import Shop from "./Shop";
-import SearchList from "./SearchList";
 
 class Home extends Component {
 
@@ -28,8 +26,6 @@ class Home extends Component {
                         <Banner swiper={this.props.swiper}/>
                     </div>
                 <HomeMain/>
-                  <Shop/>
-                  <SearchList/>
                 </div>
                 </div>
         )

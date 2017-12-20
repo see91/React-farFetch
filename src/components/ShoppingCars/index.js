@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
+import {connect} from 'react-redux'
 import './style/shopping.css'
-export default class ShoppingCars extends Component {
+import action from "../../store/action/shopcars";
+
+
+class ShoppingCars extends Component {
+    componentDidMount() {
+        let id = this.props.match.params.id;
+        this.props.getShopcar({id: id})
+    }
+
     render() {
+        console.log(this.props);
         return (
             <div id="shopping">
                 <MHeader title={{title: '购物袋'}} back={true}/>
@@ -20,10 +30,11 @@ export default class ShoppingCars extends Component {
                             <button className='iconfont icon-youxiang email'></button>
                         </li>
                         <button className="Settle"
-                                onClick={()=>{
-                                    this. props.history.push("/settlement")
+                                onClick={() => {
+                                    this.props.history.push("/settlement")
                                 }}
-                        >去结算</button>
+                        >去结算
+                        </button>
                     </ul>
                 </div>
 
@@ -31,3 +42,9 @@ export default class ShoppingCars extends Component {
         )
     }
 }
+
+
+export default connect(
+    state => state.detail,
+    action
+)(ShoppingCars)

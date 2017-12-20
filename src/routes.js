@@ -30,10 +30,11 @@ export default class Routes extends Component {
                         <Route path="/user" component={User}/>
                         <Route path="/settlement" component={Settlement}/>
                         <Route path="/harvest" component={Harvest}/>
-                        <Route path="/shoppingCars" component={ShoppingCars}/>
+                        {/*<Route path="/shoppingCars" component={ShoppingCars}/>*/}
                         <Route path="/login" component={Login}/>
                         <Route path="/list" component={List}/>
                         <Route path="/detail/:id" component={Detail}/>
+                        <Route path="/shoppingcars/:id" component={ShoppingCars}/>
                     </Switch>
                 </div>
             </Router>

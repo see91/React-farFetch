@@ -1,12 +1,10 @@
 import React,{Component} from 'react';
 import './index.less';
 import apple from '../../../static/img/apple.png'
-import white from '../../../static/img/white.jpg'
+import hui from '../../../static/img/hui.png'
 import fangda from '../../../static/img/fangda.png';
 import kok from '../../../static/img/kok.png';
 import NavLink from "react-router-dom/es/NavLink";
-
-
 
 export default class SearchList extends Component{
   constructor(){
@@ -14,10 +12,10 @@ export default class SearchList extends Component{
     this.state={flag:false}
   }
   handleFocus = ()=>{
-      this.setState({flag:!this.state.flag})
+      this.setState({flag:true})
   }
   handleBlur = ()=>{
-      this.setState({flag:!this.state.flag})
+      this.setState({flag:false})
   }
     render(){
         return (
@@ -33,14 +31,18 @@ export default class SearchList extends Component{
                 </form>
               </div>
               <div className="my-llist">
-
+                <p>
+                  <NavLink to="/search/item1">女士</NavLink>
+                  <NavLink to="/search/item2">男士</NavLink>
+                  <NavLink to="/search/item3">儿童</NavLink>
+                </p>
               </div>
               <div></div>
               {this.state.flag?
                 <div className="apple">
                   <img src={apple}/>
                 </div>:<div className="apple">
-                <img src={white}/></div>
+                <img src={hui}/></div>
               }
             </div>
         )

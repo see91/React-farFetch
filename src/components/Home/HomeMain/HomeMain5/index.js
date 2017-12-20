@@ -13,6 +13,7 @@ class HomeMain5 extends Component{
         return (
             <div>
                 <div className="home-main5">
+                  <div className="hehe"></div>
                     <div className="nin">魅力年终派对造型</div>
                     <ul>
                       {
@@ -20,7 +21,7 @@ class HomeMain5 extends Component{
                           <li key={index}>
                             <img src={item.url}/>
                             <p>{item.title}</p>
-                            <span>{item.price}</span>
+                            <span>￥{item.price}</span>
                           </li>
                         ))
                       }
@@ -39,7 +40,7 @@ class HomeMain5 extends Component{
                           <li key={index}>
                             <img src={item.url}/>
                             <p>{item.title}</p>
-                            <span>{item.price}</span>
+                            <span>￥{item.price}</span>
                           </li>
                         ))
                       }
@@ -58,7 +59,7 @@ class HomeMain5 extends Component{
                       <li key={index}>
                         <img src={item.url}/>
                         <p>{item.title}</p>
-                        <span>{item.price}</span>
+                        <span>￥{item.price}</span>
                       </li>
                     ))
                   }
@@ -77,7 +78,7 @@ class HomeMain5 extends Component{
                       <li key={index}>
                         <img src={item.url}/>
                         <p>{item.title}</p>
-                        <span>{item.price}</span>
+                        <span>￥{item.price}</span>
                       </li>
                     ))
                   }
@@ -96,7 +97,7 @@ class HomeMain5 extends Component{
                       <li key={index}>
                         <img src={item.url}/>
                         <p>{item.title}</p>
-                        <span>{item.price}</span>
+                        <span>￥{item.price}</span>
                       </li>
                     ))
                   }

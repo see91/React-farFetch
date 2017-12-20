@@ -4,7 +4,7 @@ import './index.less';
 export default class Shop extends Component{
     render(){
         return (
-          <div>
+          <div className="shopp">
             <div className="shop-header">
               <NavLink exact to='/'>
                 <i className="iconfont icon-cuo"></i>

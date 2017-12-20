@@ -24,7 +24,7 @@ class HomeMain4 extends Component{
                           <li key={index}>
                             <img src={item.url}/>
                             <p>{item.title}</p>
-                            <span>{item.price}</span>
+                            <span>￥{item.price}</span>
                           </li>
                         ))
 

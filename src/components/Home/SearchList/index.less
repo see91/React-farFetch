@@ -1,4 +1,5 @@
 .searchH {
+  background-color: #F4F5F6;
   .search-top {
     padding: 0 10px;
     height: 40px;
@@ -44,6 +45,38 @@
       margin-left: 13px;
     }
   }
+  .my-llist{
+    margin-top: 20px;
+    //padding: 0 20px;
+    p{
+      text-align: center;
+      a{
+        color: #060606;
+        display: inline-block;
+        width: 95px;
+        border: 1px solid black;
+        height: 21px;
+        line-height: 20px;
+        font-size: 14px;
+      }
+      a:first-child,a:nth-of-type(2){
+          border-right:none;
+      }
+      a:first-child{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      a:nth-of-type(3){
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      .active {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
   .apple {
     position: fixed;
     bottom: 0;
@@ -51,37 +84,6 @@
     img {
       height: 100%;
       width: 100%;
-    }
-    //.white{
-    //  position: fixed;
-    //  left: 0;
-    //  bottom: 0;
-    //  img{
-    //    height: 100%;
-    //    width: 100%;
-    //  }
-    //
-    //}
-    .my-llist {
-      p {
-        height: 30px;
-        line-height: 30px;
-        background: pink;
-      }
-      a {
-        color: #000;
-        text-decoration: none;
-        margin-right: 30px;
-      }
-      div {
-        height: 100px;
-        border: 1px solid red;
-        overflow: hidden;
-      }
-      ul {
-        list-style: inside;
-        height: 100px;
-      }
     }
   }
 }

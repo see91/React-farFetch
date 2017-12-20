@@ -24,7 +24,7 @@ this.props.reqChoose()
                     <li key={index}>
                       <img src={item.url}/>
                       <p>{item.title}</p>
-                      <span>{item.price}</span>
+                      <span>￥{item.price}</span>
                     </li>
                   ))
                 }
@@ -33,8 +33,6 @@ this.props.reqChoose()
         )
     }
 }
-
-
 export default connect (
   state=>state,
   action

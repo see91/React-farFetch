@@ -11,13 +11,17 @@ let actions = {
                     payload: date
                 });
             })
-          getChoose().then(data=>{
-              dispatch({
-                type: types.GET_CHOOSE,
-                payload:data
-              })
-          })
         }
+    },
+    reqChoose(){
+      return function (dispatch,getState) {
+        getChoose().then(data=>{
+          dispatch({
+            type: types.GET_CHOOSE,
+            payload:data
+          })
+        })
+      }
     }
 };
 

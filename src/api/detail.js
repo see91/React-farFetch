@@ -7,3 +7,8 @@ axios.defaults.baseURL = "http://localhost:6066";
 export let getPrddetail = (id) => {
     return axios.post('/prddetail', id)
 };
+
+//获取 推荐数据
+export let getGoodsList=()=>{
+    return axios.get('/recommend',id)
+}

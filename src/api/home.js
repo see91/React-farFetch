@@ -9,3 +9,4 @@ axios.interceptors.response.use((res) => {
 export let getSwiper = () => {
     return axios.get('/swiper')
 };
+

@@ -21,6 +21,10 @@ export default class Introduce extends Component {
                     <span><i className='iconfont icon-dianhua'></i></span>
                     <span><i className='iconfont icon-youxiang'></i></span>
                 </div>
+                <div className='phone-bottom'>
+                    <span className='phone-bottom-top'></span>
+                    <span className='phone-bottom-bottom'></span>
+                </div>
             </div>
         )
     }

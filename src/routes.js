@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {
-    HashRouter as Router,
-    Route,
-    Switch
+  HashRouter as Router,
+  Route,
+  Switch
 } from 'react-router-dom';
 import Home from "./components/Home/index";
 import User from "./components/User/index";
@@ -16,7 +16,7 @@ import ShoppingCars from './components/ShoppingCars/index'
 import Login from './components/Login/index';
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
-import Shop from "./components/Home/Shop/index";
+import Shop from "./components/Home/Shop";
 
 export default class Routes extends Component {
     render() {

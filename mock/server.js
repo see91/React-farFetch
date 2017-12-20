@@ -257,9 +257,9 @@ app.post('/signup', function (req, res) {
     })
 });
 app.get('/prdlist1', (req, res) => {
-  read('./data/prdlist1.json', (data) => {
-    res.send(data)
-  })
+    read('./data/prdlist1.json', (data) => {
+        res.send(data)
+    })
 });
 
 /**

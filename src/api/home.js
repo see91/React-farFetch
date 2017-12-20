@@ -14,4 +14,13 @@ export let getChoose = ()=> {
 };
 export let getGroom = ()=>{
     return axios.get('/prdlist1')
+};
+export let getList1 = ()=>{
+    return axios.get('/list1')
+};
+export let getList2 = ()=>{
+    return axios.get('/list2')
+};
+export let getList3 = ()=>{
+  return axios.get('/list3')
 }

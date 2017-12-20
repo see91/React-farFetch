@@ -6,6 +6,9 @@ axios.defaults.baseURL = "http://localhost:6066";
 //     return res.data
 // });
 
-export let getData = (info) => {
-    return axios.get('/prdlist', info)
+export let getData = () => {
+    return axios.get('/prdlist')
 };
+export let getCurrentList=(type)=>{
+    return axios.post('/recommlist',type)
+}

@@ -2,7 +2,7 @@ import * as types from '../../action-types'
 
 let initState = {
     getList: [],
-    currentList:0
+    currentList:[]
 };
 
 
@@ -14,13 +14,6 @@ export default function (state = initState, action) {
                 getList: action.payload
             };
         case types.GET_CURRENTLIST:
-            console.log(action.payload);
-            return {
-                ...state,
-                currentList: action.payload
-            };
-        case types.GET_CHANGETYPE:
-            console.log(action.payload);
             return {
                 ...state,
                 currentList: action.payload

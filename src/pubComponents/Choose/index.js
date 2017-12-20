@@ -10,7 +10,7 @@ this.props.reqChoose()
     render(){
       return (
             <div className="home-main">
-                <div>特别为您推荐的卫衣及针织衫<span>选购全部<a> ></a></span></div>
+                <div>特别为您推荐的卫衣及针织衫<h6>选购全部<a> ></a></h6></div>
               <ul>
                 {
                   this.props.home.choose.map((item,index)=>(

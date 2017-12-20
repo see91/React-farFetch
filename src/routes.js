@@ -12,6 +12,7 @@ import './pubComponents/style/tab.css'
 import Tab from "./pubComponents/Tab/index";
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
+import Shop from "./components/Home/Shop";
 
 export default class Routes extends Component {
     render() {
@@ -26,6 +27,7 @@ export default class Routes extends Component {
                         <Route path="/user" component={User}/>
                         <Route path="/list" component={List}/>
                         <Route path="/detail/:id" component={Detail}/>
+                        <Route path="/shop" component={Shop}/>
                     </Switch>
                 </div>
             </Router>

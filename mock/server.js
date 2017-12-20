@@ -150,7 +150,6 @@ app.post('/shoppingcars', (req, res) => {
 });
 */
 
-
 /**
  * search
  */
@@ -200,7 +199,6 @@ app.post('/collection', (req, res) => {
 
 });
 
-
 //获取用户信息
 function getUsersInfo(cb) {
     read('./data/userInfo.json', (userInfo) => {
@@ -225,6 +223,19 @@ app.post('/shoppingcart', (req, res) => {
             });
         });
     }
+});
+
+/**
+ * 加入购物车
+ */
+app.post('/shopcart', (req, res) => {
+    let {userID, commodity} = req.body;
+    if (!userID) {
+        res.send({code: 0, error: '用户未登录!'});
+        return
+    }
+    console.log(userID);
+
 });
 
 
@@ -256,6 +267,7 @@ app.post('/signup', function (req, res) {
         }
     })
 });
+
 app.get('/prdlist1', (req, res) => {
     read('./data/prdlist1.json', (data) => {
         res.send(data)

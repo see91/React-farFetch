@@ -1,41 +1,67 @@
-.content{
-  background: aliceblue;
-  .btn{
+.content {
+  background: #f5f5f5;
+  .btn {
     width: 100%;
     background: #fff;
-    p{
+    p {
       display: inline-block;
     }
-    button{
+    button {
       outline: none;
       width: 60px;
       height: 25px;
       background: #fff;
-      border:1px solid lightgray;
+      border: 1px solid lightgray;
       margin-left: 230px;
     }
   }
-  .container{
-    width: 90%;
+  .container {
+    width: 95%;
     margin: 0 auto;
-    h3{
+    h3 {
       color: red;
       font-size: 16px;
       text-align: center;
     }
 
-    .list {
-      width: 100%;
-      //height: 60px;
-      //display: flex;
+    .list-group {
+      display: flex;
       flex-wrap: wrap;
       padding-bottom: 10px;
       text-align: center;
-      margin: 5px 0;
 
-      background: #fff;
-      img{
-        width: 100%;
+      a {
+        margin: 5px 6px;
+        width: 46%;
+        background: #fff;
+
+        height: 320px;
+        .icon-gray-star {
+          color: #ddd;
+          margin-top: 9px;
+          margin-left: 130px;
+          &:active {
+            color: #000;
+          }
+        }
+        img {
+          margin-top: 6px;
+          width: 100px;
+          height: 180px;
+        }
+        p {
+          color: #222222;
+          font-size: 13px;
+          line-height: 22px;
+          font-weight: bold;
+          margin: 25px 45px 17px 0;
+        }
+        b {
+          color: #222222;
+          font-size: 13px;
+          font-weight: normal;
+          margin: 0 96px 35px 0;
+        }
       }
     }
   }

@@ -1,6 +1,6 @@
 import * as types from '../action-types';
 
-import {getSwiper} from '../../api/home'
+import {getSwiper,getChoose} from '../../api/home'
 
 let actions = {
     reqSliders() {
@@ -12,6 +12,16 @@ let actions = {
                 });
             })
         }
+    },
+    reqChoose(){
+      return function (dispatch,getState) {
+        getChoose().then(data=>{
+          dispatch({
+            type: types.GET_CHOOSE,
+            payload:data
+          })
+        })
+      }
     }
 };
 

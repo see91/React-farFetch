@@ -19,7 +19,7 @@ class Home extends Component {
         return (
             <div>
                <HomeHeader/>
-                <div className="content">
+                <div className="content1">
                 <SearchBar/>
                 <Warning/>
                     <div className="home-swipe">

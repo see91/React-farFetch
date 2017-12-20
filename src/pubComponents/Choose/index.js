@@ -1,34 +1,34 @@
 import React,{Component} from 'react';
 import './index.less';
-import boom from '../../static/img/3.jpg'
-export default class Choose extends Component{
+import {connect} from 'react-redux'
+import action from '../../store/action/home'
+
+ class Choose extends Component{
+   componentDidMount() {
+this.props.reqChoose()
+   }
     render(){
-        return (
+      return (
             <div className="home-main">
                 <div>特别为您推荐的卫衣及针织衫<span>选购全部<a> ></a></span></div>
-                <ul>
-                    <li>
-                        <img src={boom}/>
-                        <p>AMI ALEXANDRE </p>
-                        <span>￥1,797</span>
+              <ul>
+                {
+                  this.props.home.choose.map((item,index)=>(
+                    <li key={index}>
+                      <img src={item.url}/>
+                      <p>{item.title}</p>
+                      <span>{item.price}</span>
                     </li>
-                    <li>
-                        <img src={boom}/>
-                        <p>CALVIN KLENIN </p>
-                        <span>￥3720</span>
-                    </li>
-                    <li>
-                        <img src={boom}/>
-                        <p>CALVIN KLENIN </p>
-                        <span>￥3720</span>
-                    </li>
-                    <li>
-                        <img src={boom}/>
-                        <p>CALVIN KLENIN </p>
-                        <span>￥3720</span>
-                    </li>
-                </ul>
+                  ))
+                }
+              </ul>
             </div>
         )
     }
 }
+
+
+export default connect (
+  state=>state,
+  action
+)(Choose)

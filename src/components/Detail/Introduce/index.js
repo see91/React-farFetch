@@ -8,6 +8,10 @@ import Sizes from "./Sizes/index";
 import './index.less'
 
 export default class Introduce extends Component {
+    phoneClick=()=>(
+        alert(1)
+
+    )
     render() {
         return (
             <div className='introduce'>
@@ -18,7 +22,7 @@ export default class Introduce extends Component {
                 <Brand/>
                 <div className='phone'>以电话形式下单或联系我们</div>
                 <div className='email'>
-                    <span><i className='iconfont icon-dianhua'></i></span>
+                    <span onClick={this.phoneClick}><i className='iconfont icon-dianhua'></i></span>
                     <span><i className='iconfont icon-youxiang'></i></span>
                 </div>
                 <div className='phone-bottom'>

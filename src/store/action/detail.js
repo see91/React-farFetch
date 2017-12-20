@@ -1,6 +1,6 @@
 import * as types from '../action-types'
 
-import {getPrddetail} from '../../api/detail'
+import {getPrddetail,getGoodsList} from '../../api/detail'
 
 let action = {
     reqDetail(id) {
@@ -12,6 +12,17 @@ let action = {
                 })
             })
         }
-    }
+    },
+    reqGood(id) {
+        return function (dispatch, getState) {
+            getGoodsList(id).then(data => {
+                dispatch({
+                    type: types.GET_GETLIST,
+                    payload: data
+                })
+            })
+        }
+    },
 };
+
 export default action

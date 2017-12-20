@@ -9,6 +9,6 @@ export let getPrddetail = (id) => {
 };
 
 //获取 推荐数据
-export let getGoodsList=()=>{
+export let getGoodsList=(id)=>{
     return axios.get('/recommend',id)
 }

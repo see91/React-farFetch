@@ -19,6 +19,12 @@ export default function (state = initState, action) {
                 ...state,
                 currentList: action.payload
             };
+        case types.GET_CHANGETYPE:
+            console.log(action.payload);
+            return {
+                ...state,
+                currentList: action.payload
+            };
         default:
             return state
     }

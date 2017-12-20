@@ -12,15 +12,16 @@ export default class ListHeader extends Component {
 
     changeType = (event)=>{
         let type = event.target.dataset.type;
-        this.props.changeType(type);
+        console.log(type);
+        // this.props.changeType(type);
         this.switchShow();
     }
     getMenuList = () => (
             <ul className="menu-list" onClick={this.changeType}>
-                <li className={this.props.type == ""?'active':''} type="">商品分类</li>
-                <li className={this.props.type == "skirt"?'active':''} type="skirt">裙子</li>
-                <li className={this.props.type == "coat"?'active':''} type="coat">上衣</li>
-                <li className={this.props.type == "pants"?'active':''} type="pants">裤子</li>
+                <li className={this.props.type == ""?'active':''} data-type="">商品分类</li>
+                <li className={this.props.type == "skirt"?'active':''} data-type="skirt">裙子</li>
+                <li className={this.props.type == "coat"?'active':''} data-type="coat">上衣</li>
+                <li className={this.props.type == "pants"?'active':''} data-type="pants">裤子</li>
                 <li className={this.props.type == "shoes"?'active':''} data-type="shoes">鞋子</li>
             </ul>
     )

@@ -73,12 +73,13 @@ read('./data/prdList.json', (data) => {
 
 */
 
+
 /**
  * 轮播图  返回六张轮播图图片地址
  */
 app.get('/swiper', (req, res) => {
     read('./data/swiper.json', (s) => {
-        res.send(s ? s : 404)
+        res.send(s)
     });
 });
 
@@ -338,3 +339,4 @@ app.post('/login', function (req, res) {
         }
     })
 });*/
+

@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import NavLink from "react-router-dom/es/NavLink";
 import './index.less';
 import {connect} from 'react-redux'
 import action from '../../store/action/home'
@@ -10,7 +11,13 @@ this.props.reqChoose()
     render(){
       return (
             <div className="home-main">
-                <div>特别为您推荐的卫衣及针织衫<h6>选购全部<a> ></a></h6></div>
+                <div>特别为您推荐的卫衣及针织衫
+                  <NavLink exact to='/list'>
+                  <h6>选购全部
+                    <span> ></span>
+                  </h6>
+                  </NavLink>
+                </div>
               <ul>
                 {
                   this.props.home.choose.map((item,index)=>(

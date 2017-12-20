@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import boom from '../../../../static/img/3.jpg';
+import NavLink from "react-router-dom/es/NavLink";
 import './index.less'
 import {connect} from 'react-redux'
 import action from '../../../../store/action/home'
@@ -26,7 +26,9 @@ class HomeMain5 extends Component{
                       }
                     </ul>
                     <div className="hao">
+                        <NavLink exact to="/list">
                         <button>选购全部</button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="home-main5">
@@ -43,7 +45,9 @@ class HomeMain5 extends Component{
                       }
                     </ul>
                     <div className="hao">
+                      <NavLink exact to="/list">
                         <button>选购全部</button>
+                      </NavLink>
                     </div>
                 </div>
             <div className="home-main5">
@@ -60,7 +64,9 @@ class HomeMain5 extends Component{
                   }
                 </ul>
                 <div className="hao">
+                  <NavLink exact to="/list">
                     <button>选购全部</button>
+                  </NavLink>
                 </div>
             </div>
               <div className="home-main5">
@@ -77,7 +83,9 @@ class HomeMain5 extends Component{
                   }
                 </ul>
                 <div className="hao">
-                  <button>选购全部</button>
+                  <NavLink exact to="/list">
+                    <button>选购全部</button>
+                  </NavLink>
                 </div>
               </div>
               <div className="home-main5">
@@ -94,7 +102,9 @@ class HomeMain5 extends Component{
                   }
                 </ul>
                 <div className="hao">
-                  <button>选购全部</button>
+                  <NavLink exact to="/list">
+                    <button>选购全部</button>
+                  </NavLink>
                 </div>
               </div>
             </div>

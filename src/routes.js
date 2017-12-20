@@ -13,6 +13,7 @@ import Tab from "./pubComponents/Tab/index";
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
 import Shop from "./components/Home/Shop";
+import SearchList from "./components/Home/SearchList";
 
 export default class Routes extends Component {
   render() {
@@ -28,6 +29,7 @@ export default class Routes extends Component {
             <Route path="/list" component={List}/>
             <Route path="/detail/:id" component={Detail}/>
             <Route path="/shop" component={Shop}/>
+            <Route path="/search" component={SearchList}/>
           </Switch>
         </div>
       </Router>

@@ -1,7 +1,87 @@
-.apple{
-  img{
-    height: 100%;
-    width: 100%;
-  }
+.searchH {
+  .search-top {
+    padding: 0 10px;
+    height: 40px;
+    background-color: #060606;
+    line-height: 40px;
+    form {
+      position: relative;
+      img {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+      }
+      img:first-child {
+        top: 10px;
+        left: 2px;
+      }
+      img:nth-child(2) {
+        top: 10px;
+        right: 55px;
+      }
+      input {
+        height: 22px;
+        line-height: 22px;
+        width: 87%;
+        text-indent: 25px;
+        background-color: #F5F5F5;
+        border: none;
+      }
+    }
+    input {
+      height: 20px;
+      line-height: 20px;
+      width: 85%;
+      text-indent: 20px;
+      img:first-child {
 
+      }
+    }
+    span {
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      margin-left: 13px;
+    }
+  }
+  .apple {
+    position: fixed;
+    bottom: 0;
+    //display: none;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+    //.white{
+    //  position: fixed;
+    //  left: 0;
+    //  bottom: 0;
+    //  img{
+    //    height: 100%;
+    //    width: 100%;
+    //  }
+    //
+    //}
+    .my-llist {
+      p {
+        height: 30px;
+        line-height: 30px;
+        background: pink;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+        margin-right: 30px;
+      }
+      div {
+        height: 100px;
+        border: 1px solid red;
+        overflow: hidden;
+      }
+      ul {
+        list-style: inside;
+        height: 100px;
+      }
+    }
+  }
 }

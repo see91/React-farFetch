@@ -16,6 +16,7 @@ import ShoppingCars from './components/ShoppingCars/index'
 import Login from './components/Login/index';
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
+import Shop from "./components/Home/Shop/index";
 
 export default class Routes extends Component {
     render() {
@@ -30,10 +31,10 @@ export default class Routes extends Component {
                         <Route path="/user" component={User}/>
                         <Route path="/settlement" component={Settlement}/>
                         <Route path="/harvest" component={Harvest}/>
-                        {/*<Route path="/shoppingCars" component={ShoppingCars}/>*/}
                         <Route path="/login" component={Login}/>
                         <Route path="/list" component={List}/>
                         <Route path="/detail/:id" component={Detail}/>
+                        <Route path="/shop" component={Shop}/>
                         <Route path="/shoppingcars/:id" component={ShoppingCars}/>
                     </Switch>
                 </div>

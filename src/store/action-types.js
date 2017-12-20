@@ -3,6 +3,9 @@ const GET_DATALIST = 'GET_DATALIST';
 const GET_PRDDETAIL = 'GET_PRDDETAIL';
 const GET_CHOOSE = 'GET_CHOOSE';
 const GET_SHOPCARS = 'GET_SHOPCARS';
+const GET_CHOOSE = 'GET_CHOOSE';
+const GET_GROOM = 'GET_GROOM';
+
 
 
 export {
@@ -10,5 +13,7 @@ export {
     GET_DATALIST,
     GET_PRDDETAIL,
     GET_CHOOSE,
-    GET_SHOPCARS
+    GET_SHOPCARS,
+    GET_CHOOSE,
+    GET_GROOM
 }

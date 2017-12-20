@@ -25,7 +25,6 @@ export default class Shop extends Component {
                     <button>立即选购</button>
                 </div>
             </div>
-
         )
     }
 }

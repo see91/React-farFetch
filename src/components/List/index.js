@@ -6,18 +6,12 @@ import './index.less'
 import {Link} from 'react-router-dom'
 import ListHeader from './ListHeader'
 class List extends Component{
-    // constructor(){
-    //     super();
-    //     this.state={showList:false}
-    // }
+
     componentDidMount() {
         this.props.getDatas()
 
     }
-    // switchShow = () => {
-    //     this.setState({showList: !this.state.showList});
-    // }
-    //
+
     render(){
         console.log(this.props.getList);
         return (
@@ -33,21 +27,21 @@ class List extends Component{
 
                         <h3>SALE|近4000件商品现有4折优惠</h3>
                         <div className="list-group">
-                        {
-                            this.props.getList.map((item,index)=>(
-                                <Link  key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
-                                    <div className="iconfont icon-gray-star"></div>
+                            {
+                                this.props.getList.map((item,index)=>(
+                                    <Link  key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
+                                        <div className="iconfont icon-gray-star"></div>
                                         <img src={item.url}/>
                                         <p>{item.title}</p>
                                         <b>￥{item.price}</b>
-                                </Link>
-                            ))
-                        }
-                            </div>
+                                    </Link>
+                                ))
+                            }
                         </div>
                     </div>
-
                 </div>
+
+            </div>
 
         )
     }

@@ -16,6 +16,9 @@ import ShoppingCars from './components/ShoppingCars/index'
 import Login from './components/Login/index';
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
+import BrandMan from "./components/Brand/BrandMan/index";
+import BrandWomen from "./components/Brand/BrandWomen/index";
+import BrandChildren from "./components/Brand/BrandChildren/index";
 
 export default class Routes extends Component {
     render() {
@@ -34,6 +37,9 @@ export default class Routes extends Component {
                         <Route path="/login" component={Login}/>
                         <Route path="/list" component={List}/>
                         <Route path="/detail/:id" component={Detail}/>
+                        <Route path="/man" component={BrandMan}/>
+                        <Route path="/woman" component={BrandWomen}/>
+                        <Route path="/children" component={BrandChildren}/>
                     </Switch>
                 </div>
             </Router>

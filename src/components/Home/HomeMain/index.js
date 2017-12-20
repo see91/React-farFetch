@@ -13,7 +13,7 @@ export default class HomeMain extends Component {
             <Choose choose={this.props.choose}/>
             <HomeMain2/>
             <HomeMain3/>
-                <HomeMain4/>
+                <HomeMain4 groom={this.props.groom}/>
                 <HomeMain6/>
                 <HomeMain5/>
             </div>

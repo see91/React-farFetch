@@ -7,7 +7,7 @@ export default class HomeMain6 extends Component{
           <div>
             <div className="love">您可能会喜欢... ...</div>
           <div className="home-main6">
-            <div>CALVIN KLEIN 205W39NYC<span>选购全部<a> ></a></span></div>
+            <div>CALVIN KLEIN 205W39NYC<h6>选购全部<a> ></a></h6></div>
             <ul>
               <li>
                 <img src={boom}/>
@@ -27,7 +27,7 @@ export default class HomeMain6 extends Component{
             </ul>
           </div>
             <div className="home-main6">
-              <div>AMI ALEXANDER MATTIUSSI<span>选购全部<a> ></a></span></div>
+              <div>AMI ALEXANDER MATTIUSSI<h6>选购全部<a> ></a></h6></div>
               <ul>
                 <li>
                   <img src={boom}/>
@@ -47,7 +47,7 @@ export default class HomeMain6 extends Component{
               </ul>
             </div>
             <div className="home-main6">
-              <div>OFF-WHITE<span>选购全部<a> ></a></span></div>
+              <div>OFF-WHITE<h6>选购全部<a> ></a></h6></div>
               <ul>
                 <li>
                   <img src={boom}/>

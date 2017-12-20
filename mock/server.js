@@ -101,6 +101,11 @@ app.get('/prdlist', (req, res) => {
         res.send(data)
     })
 });
+app.get('/prdlist1', (req, res) => {
+  read('./data/prdlist1.json', (data) => {
+    res.send(data)
+  })
+});
 
 app.listen(6066, () => {
     console.log('server success!');

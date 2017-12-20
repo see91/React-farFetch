@@ -1,15 +1,87 @@
-.submit{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  background: #3680ff;
+.submits{
   width: 100%;
-  text-align: center;
-  height: 40px;
-  line-height: 40px;
-  z-index: -1;
-  button{
-    color: #fff;
-    letter-spacing: 10px;
+  .submit{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #3680ff;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    z-index: -1;
+    button{
+      color: #fff;
+      letter-spacing: 10px;
+    }
+  }
+  .add-bags{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 40%;
+    width: 100%;
+    background: #ffffff;
+    z-index: 999;
+
+    .bags-close{
+      height: 30px;
+      line-height: 30px;
+      border-bottom: 1px solid #d5d5d5;
+      .bags-icon{
+        margin-left: 10px;
+        font-size: 18px;
+        font-weight:normal;
+      }
+      .bags-btn{
+        display: inline-block;
+        width: 25%;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: small;
+        background: skyblue;
+        padding: 1px;
+        position: fixed;
+        right: 10px;
+        margin-top: 5px;
+      }
+    }
+    .bags-size{
+      .mean-code{
+        text-align: center;
+      }
+      .mean-last{
+        position: fixed;
+        left: 0;
+        top:78%;
+        width: 100%;
+        height: 30px;
+        background: #fcfcfc;
+        padding: 0 10px;
+        line-height: 30px;
+        .mean-size{
+          text-align: center;
+          position: fixed;
+          left: 50%;
+          top: 78%;
+        }
+      }
+    }
+    .size-list{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      height: 30px;
+      line-height: 30px;
+      border-top: 1px solid #d5d5d5;
+      width: 100%;
+      font-size: small;
+      padding-left: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
   }
 }

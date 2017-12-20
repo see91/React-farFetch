@@ -25,6 +25,7 @@
     h5{
       font-size: small;
       font-weight: bold;
+      line-height: 20px;
       span{
         margin-left: 40%;
         color: #d5d5d5;
@@ -33,4 +34,18 @@
     }
 
   }
+}
+.fade-enter{
+  opacity: .1;
+}
+.fade-enter-active{
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-exit-active{
+  opacity: .1;
+  transition: opacity 500ms ease-in-out;
 }

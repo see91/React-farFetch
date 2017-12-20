@@ -6,6 +6,7 @@ const GET_LIST1 = 'GRT_LIST1'
 const GET_LIST2 = 'GRT_LIST2'
 const GET_LIST3 = 'GRT_LIST3'
 const GET_PRDDETAIL = 'GET_PRDDETAIL';
+const GET_GETLIST = 'GET_GETLIST';
 
 export {
     GET_SLIDERS,
@@ -16,4 +17,5 @@ export {
     GET_LIST1,
     GET_LIST2,
     GET_LIST3,
+    GET_GETLIST,
 }

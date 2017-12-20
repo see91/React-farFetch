@@ -35,6 +35,7 @@
     "bootstrap": "^3.3.7",
     "es6-promise": "^4.1.1",
     "history": "^4.7.2",
+    "layui-src": "^2.2.45",
     "rc-banner-anim": "^1.0.0",
     "rc-tween-one": "^1.5.8",
     "react": "^16.2.0",

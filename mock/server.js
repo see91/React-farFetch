@@ -295,19 +295,19 @@ app.post('/login', function (req, res) {
     })
 });
 app.get('/list1', (req, res) => {
-  read('./data/list1.json', (data) => {
-    res.send(data)
-  })
+    read('./data/list1.json', (data) => {
+        res.send(data)
+    })
 });
 app.get('/list2', (req, res) => {
-  read('./data/list2.json', (data) => {
-    res.send(data)
-  })
+    read('./data/list2.json', (data) => {
+        res.send(data)
+    })
 });
 app.get('/list3', (req, res) => {
-  read('./data/list3.json', (data) => {
-    res.send(data)
-  })
+    read('./data/list3.json', (data) => {
+        res.send(data)
+    })
 });
 
 /**
@@ -320,7 +320,6 @@ app.get('/user/:id', function (req, res) {
         return
     }
     let userId = req.params.id;
-    console.log(userId);
 });
 
 

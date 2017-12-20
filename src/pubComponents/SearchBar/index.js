@@ -8,7 +8,7 @@ export default class SearchBar extends Component{
             <div className="my-my">
             <div className="home-search">
                 <img src={fangda}/>
-                <NavLink exact to="/search">
+                <NavLink exact to="/search/item2">
                 <input type="text" placeholder="搜索"/>
                 </NavLink>
             </div>

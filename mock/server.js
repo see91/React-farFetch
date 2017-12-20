@@ -173,3 +173,4 @@ app.post('/collection', (req, res) => {
 app.listen(6066, () => {
     console.log('server success!');
 });
+

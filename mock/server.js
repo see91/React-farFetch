@@ -465,6 +465,19 @@ app.post('/login', function (req, res) {
     })
 });
 
+app.get("/logout", function (req, res) {
+    req.session.user = null;
+    res.json({code: 0, success: '退出成功'})
+});
+
+app.get('/validate', function (req, res) {
+    if (req.session.user) {
+        res.json({code: 0, user: req.session.user});
+    } else {
+        res.json({code: 1, error: "此用户未登录"})
+    }
+});
+
 /**
  * 虎子
  */

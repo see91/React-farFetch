@@ -14,6 +14,7 @@ const REG = 'REG';
 
 export const LOGIN='LOGIN';
 export const LOGOUT='LOGOUT';
+export const CLEAR_MESSAGES='CLEAR_MESSAGES';
 export const Validate='Validate';
 
 export {
@@ -29,5 +30,5 @@ export {
     GET_LIST2,
     GET_LIST3,
     GET_GETLIST,
-    REG
+    REG,
 }

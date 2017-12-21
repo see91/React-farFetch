@@ -7,8 +7,14 @@ export function reg(user) {
     return axios.post('/signup', user)
 }
 
-
 export function login(user) {
-    console.log(user);
     return axios.post('/login', user)
+}
+
+export function logout(user) {
+    return axios.get('/logout', user)
+}
+
+export function validate(user) {
+    return axios.get('/validate', user)
 }

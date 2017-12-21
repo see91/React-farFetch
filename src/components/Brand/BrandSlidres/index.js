@@ -1,10 +1,22 @@
 import React,{Component} from 'react';
 import boom from '../../../static/img/3.jpg'
+import {connect} from 'react-redux'
+import action from '../../../store/action/brand'
 import './index.less'
 import ReactIScroll from 'react-iscroll'
 let iScroll = require('iscroll');
-export default class BrandSlidres extends Component{
+class BrandSlidres extends Component{
+    componentDidMount() {
+        this.props.reqBrandSwiper();
+    }
     render(){
+        let style = {
+            height:'200px',width:'300px'
+        }
+        let arr = [];
+        for (let i in this.props.brand.swiper){
+            arr.push(this.props.brand.swiper[i])
+        }
         return (
             <div className="brand-sldres">
                 <h3>最近浏览的设计师品牌</h3>
@@ -16,9 +28,16 @@ export default class BrandSlidres extends Component{
                                   disablePointer:true,
                                   disableTouch:false,
                                   disableMouse:false}}>
-                    <div style={{width:'400%'}}>
+                    <div style={{width:'550%'}}>
                         <ul id="brand-slidre">
-                            <li>
+                            {
+                                arr.map((item,index)=>(
+                                    <li key={index}>
+                                        <img style={style} src={item.url}/>
+                                    </li>
+                                ))
+                            }
+                           {/* <li>
                                 <img style={{height:'200px',width:'300px'}} src={boom} alt=""/>
                             </li>
                             <li>
@@ -29,7 +48,7 @@ export default class BrandSlidres extends Component{
                             </li>
                             <li>
                                 <img style={{height:'200px',width:'300px'}} src={boom} alt=""/>
-                            </li>
+                            </li>*/}
                         </ul>
                     </div>
                 </ReactIScroll>
@@ -37,3 +56,7 @@ export default class BrandSlidres extends Component{
         )
     }
 }
+export default connect (
+    state=>state,
+    action
+)(BrandSlidres);

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "对比拼接衬衫",
+    "classification": "coat",
+    "url": "https://cdn-images.farfetch-contents.com/12/53/07/67/12530767_11835920_480.jpg",
+    "urlList": [
+      "https://cdn-images.farfetch-contents.com/12/53/07/67/12530767_11835918_480.jpg",
+      "https://cdn-images.farfetch-contents.com/12/53/07/67/12530767_11835920_480.jpg",
+      "https://cdn-images.farfetch-contents.com/12/53/07/67/12530767_11835921_480.jpg"
+    ],
+    "id": 48,
+    "price": 4284
+  },
+  {
+    "title": "修身连帽衫",
+    "classification": "coat",
+    "url": "https://cdn-images.farfetch-contents.com/12/42/13/35/12421335_11371599_480.jpg",
+    "urlList": [
+      "https://cdn-images.farfetch-contents.com/12/42/13/35/12421335_11371593_480.jpg",
+      "https://cdn-images.farfetch-contents.com/12/42/13/35/12421335_11371599_480.jpg",
+      "https://cdn-images.farfetch-contents.com/12/42/13/35/12421335_11371605_480.jpg"
+    ],
+    "id": 49,
+    "price": 79821
+  },
+  {
+    "title": "格纹衬衫",
+    "classification": "coat",
+    "url": "https://cdn-images.farfetch-contents.com/12/14/48/24/12144824_10210541_480.jpg",
+    "urlList": [
+      "https://cdn-images.farfetch-contents.com/12/14/48/24/12144824_10210541_480.jpg",
+      "https://cdn-images.farfetch-contents.com/12/14/48/24/12144824_10210542_480.jpg",
+      "https://cdn-images.farfetch-contents.com/12/14/48/24/12144824_10210544_480.jpg"
+    ],
+    "id": 50,
+    "price": 75422
+  }
+]

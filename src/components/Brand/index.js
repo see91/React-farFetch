@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
 import './index.css'
 import boom from '../../static/img/3.jpg'
-
+import {Link} from 'react-router-dom'
 import BrandMan from "./BrandMan/index";
 import BrandWomen from "./BrandWomen/index";
 import BrandChildren from "./BrandChildren/index";
@@ -44,16 +44,15 @@ export default class Brand extends Component {
                             <span>女士</span>
                             <span>儿童</span>
                         </div>
-                        <div className="sou-suo">
+                        <Link to='/' className="sou-suo">
                             <ul>
                                 <li>
                                     <h4>搜索品牌名称A-Z</h4>
-                                    <span>Saint Laurent,Valentino,Gucci与2000多个设计师...</span>
-                                    <a> > </a>
+                                    <span>Saint Laurent,ValentinoGucci与2000多个设计师...</span>
+                                    <i className="iconfont icon-arrow-right"></i>
                                 </li>
                             </ul>
-                        </div>
-
+                        </Link>
                         {
                             _comp?<_comp/>:null
                         }

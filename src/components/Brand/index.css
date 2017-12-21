@@ -49,6 +49,6 @@
     font-size: 14px;
 }
 .nav-switch.active{
-    color: black;
+    color: #bdbdbd;
     border-bottom: solid;
 }

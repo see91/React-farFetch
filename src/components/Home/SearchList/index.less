@@ -1,7 +1,89 @@
-.apple{
-  img{
-    height: 100%;
-    width: 100%;
-  }
+.searchH {
+  background-color: #F4F5F6;
+  .search-top {
+    padding: 0 10px;
+    height: 40px;
+    background-color: #060606;
+    line-height: 40px;
+    form {
+      position: relative;
+      img {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+      }
+      img:first-child {
+        top: 10px;
+        left: 2px;
+      }
+      img:nth-child(2) {
+        top: 10px;
+        right: 55px;
+      }
+      input {
+        height: 22px;
+        line-height: 22px;
+        width: 87%;
+        text-indent: 25px;
+        background-color: #F5F5F5;
+        border: none;
+      }
+    }
+    input {
+      height: 20px;
+      line-height: 20px;
+      width: 85%;
+      text-indent: 20px;
+      img:first-child {
 
+      }
+    }
+    span {
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      margin-left: 13px;
+    }
+  }
+  .my-llist{
+    margin-top: 20px;
+    //padding: 0 20px;
+    p{
+      text-align: center;
+      a{
+        color: #060606;
+        display: inline-block;
+        width: 95px;
+        border: 1px solid black;
+        height: 21px;
+        line-height: 20px;
+        font-size: 14px;
+      }
+      a:first-child,a:nth-of-type(2){
+          border-right:none;
+      }
+      a:first-child{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      a:nth-of-type(3){
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      .active {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+  .apple {
+    position: fixed;
+    bottom: 0;
+    //display: none;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }

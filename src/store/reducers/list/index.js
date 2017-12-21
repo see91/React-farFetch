@@ -1,8 +1,11 @@
 import * as types from '../../action-types'
 
 let initState = {
-    getList: [],
-    currentList:0
+    getList:{
+        offset:0,
+        hasMore:true
+    },
+    currentList:[],
 };
 
 
@@ -11,16 +14,9 @@ export default function (state = initState, action) {
         case types.GET_DATALIST:
             return {
                 ...state,
-                getList: action.payload
+                getList: action.payload,
             };
         case types.GET_CURRENTLIST:
-            console.log(action.payload);
-            return {
-                ...state,
-                currentList: action.payload
-            };
-        case types.GET_CHANGETYPE:
-            console.log(action.payload);
             return {
                 ...state,
                 currentList: action.payload

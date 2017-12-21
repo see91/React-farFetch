@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import boom from '../../../../static/img/3.jpg';
+import NavLink from "react-router-dom/es/NavLink";
 import './index.less'
 import {connect} from 'react-redux'
 import action from '../../../../store/action/home'
@@ -13,6 +13,7 @@ class HomeMain5 extends Component{
         return (
             <div>
                 <div className="home-main5">
+                  <div className="hehe"></div>
                     <div className="nin">魅力年终派对造型</div>
                     <ul>
                       {
@@ -20,13 +21,15 @@ class HomeMain5 extends Component{
                           <li key={index}>
                             <img src={item.url}/>
                             <p>{item.title}</p>
-                            <span>{item.price}</span>
+                            <span>￥{item.price}</span>
                           </li>
                         ))
                       }
                     </ul>
                     <div className="hao">
+                        <NavLink exact to="/list">
                         <button>选购全部</button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="home-main5">
@@ -37,13 +40,15 @@ class HomeMain5 extends Component{
                           <li key={index}>
                             <img src={item.url}/>
                             <p>{item.title}</p>
-                            <span>{item.price}</span>
+                            <span>￥{item.price}</span>
                           </li>
                         ))
                       }
                     </ul>
                     <div className="hao">
+                      <NavLink exact to="/list">
                         <button>选购全部</button>
+                      </NavLink>
                     </div>
                 </div>
             <div className="home-main5">
@@ -54,13 +59,15 @@ class HomeMain5 extends Component{
                       <li key={index}>
                         <img src={item.url}/>
                         <p>{item.title}</p>
-                        <span>{item.price}</span>
+                        <span>￥{item.price}</span>
                       </li>
                     ))
                   }
                 </ul>
                 <div className="hao">
+                  <NavLink exact to="/list">
                     <button>选购全部</button>
+                  </NavLink>
                 </div>
             </div>
               <div className="home-main5">
@@ -71,13 +78,15 @@ class HomeMain5 extends Component{
                       <li key={index}>
                         <img src={item.url}/>
                         <p>{item.title}</p>
-                        <span>{item.price}</span>
+                        <span>￥{item.price}</span>
                       </li>
                     ))
                   }
                 </ul>
                 <div className="hao">
-                  <button>选购全部</button>
+                  <NavLink exact to="/list">
+                    <button>选购全部</button>
+                  </NavLink>
                 </div>
               </div>
               <div className="home-main5">
@@ -88,13 +97,15 @@ class HomeMain5 extends Component{
                       <li key={index}>
                         <img src={item.url}/>
                         <p>{item.title}</p>
-                        <span>{item.price}</span>
+                        <span>￥{item.price}</span>
                       </li>
                     ))
                   }
                 </ul>
                 <div className="hao">
-                  <button>选购全部</button>
+                  <NavLink exact to="/list">
+                    <button>选购全部</button>
+                  </NavLink>
                 </div>
               </div>
             </div>

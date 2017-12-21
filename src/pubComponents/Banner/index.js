@@ -7,7 +7,7 @@ const BgElement = Element.BgElement;
 export default class Banner extends React.Component {
     render() {
         return (
-            <BannerAnim prefixCls="banner-user">
+            <BannerAnim prefixCls="banner-user" autoPlay>
                 {this.props.swiper.map((item, index) => (
                     <Element
                         prefixCls="banner-user-elem"

@@ -19,6 +19,7 @@ class HomeMain4 extends Component{
                   </NavLink>
                 </div>
                 <ul>
+                  <NavLink exact to="/list">
                   {
                       this.props.home.groom.map((item,index)=>(
                           <li key={index}>
@@ -29,6 +30,7 @@ class HomeMain4 extends Component{
                         ))
 
                   }
+                  </NavLink>
 
 
                 </ul>

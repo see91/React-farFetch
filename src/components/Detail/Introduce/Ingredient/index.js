@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './index.less'
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 export default class Ingredient extends Component{
     constructor(){
         super();
@@ -10,11 +11,14 @@ export default class Ingredient extends Component{
         this.setState({show:!this.state.show})
     }
     getMenuList=()=>(
-        <div className='fabric'>
-            <h5>面料 <span>涤纶 100%</span></h5>
-            <h5>里料 <span>涤纶 100%</span></h5>
-            <h5>洗涤说明 <span>干洗</span></h5>
-        </div>
+        <CSSTransition  classNames="fade" timeout={500}>
+            <div className='fabric'>
+                <h5>面料 <span>涤纶 100%</span></h5>
+                <h5>里料 <span>涤纶 100%</span></h5>
+                <h5>洗涤说明 <span>干洗</span></h5>
+            </div>
+        </CSSTransition>
+
     )
     render(){
         return (
@@ -23,14 +27,14 @@ export default class Ingredient extends Component{
                    <span>成分与护理</span>
                    <div className='icon' >
                        {this.state.show?
-                           <i className='iconfont icon-jianhao'></i>:<i className='iconfont icon-news-more'></i>}
+                           <i className='iconfont icon-iconjian'></i>:<i className='iconfont icon-news-more'></i>}
                    </div>
                </div>
-               <div className='fabrics'>
+               <TransitionGroup className='fabrics'>
                    {
                        this.state.show && this.getMenuList()
                    }
-               </div>
+               </TransitionGroup>
            </div>
         )
     }

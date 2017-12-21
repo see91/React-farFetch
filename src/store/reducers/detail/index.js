@@ -1,7 +1,8 @@
 import * as types from '../../action-types';
 
 let initState = {
-    prdList: {}
+    prdList: {},
+    goodList:{}
 };
 
 export default function (state = initState, action) {
@@ -10,6 +11,11 @@ export default function (state = initState, action) {
             return {
                 ...state,
                 prdList: action.payload
+            };
+            case types.GET_GETLIST:
+            return {
+                ...state,
+                goodList: action.payload
             };
         default:
             return state

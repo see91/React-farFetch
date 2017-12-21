@@ -1,0 +1,54 @@
+.brand{
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    box-sizing: border-box;
+    position: fixed;
+    display: flex;
+    background-color: #fff;
+    left: 0;
+    top: 40px;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    border-top: 1px solid lightgray;
+    z-index: 10;
+}
+
+.nav span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex: 1;
+    font-size: 18px;
+    color: #d5d5d5;
+}
+
+.sou-suo ul{
+    width: 100%;
+}
+.sou-suo ul li{
+    width: 90%;
+    margin: 70px auto 0;
+    height: 55px;
+    border: 1px solid #d5d5d5;
+    background-color: white;
+}
+ .sou-suo ul li h4{
+    padding-top: 10px;
+    margin-left: 10px;
+    color: black;
+}
+.sou-suo ul li span{
+    margin-left: 10px;
+    font-size: 14px;
+}
+.nav-switch.active{
+    color: #bdbdbd;
+    border-bottom: solid;
+}

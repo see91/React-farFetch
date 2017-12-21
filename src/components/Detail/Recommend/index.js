@@ -18,6 +18,7 @@ import action from '../../../store/action/detail'
            arr.push(this.props.goodList[i])
         }
         return (
+
             <div className='recommend'>
                 <Link to={{pathname:'/list'}}>
                     <div className='title'>

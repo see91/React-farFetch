@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './index.less'
-
+import {Link} from 'react-router-dom'
 export default class Submit extends Component {
     constructor() {
         super();
@@ -16,8 +16,10 @@ export default class Submit extends Component {
     getMenuList = () => (
         <div className='add-bags'>
             <div className='bags-close'>
+
                 <i className='iconfont icon-cuo bags-icon' onClick={this.goBack}></i>
-                <p className='bags-btn'>加入购物袋</p>
+                <Link to={{pathname:'/shoppingcars'}}><p className='bags-btn'>加入购物袋</p></Link>
+
             </div>
             <div className='bags-size'>
                 <h5 className='mean-code'> 均码</h5>

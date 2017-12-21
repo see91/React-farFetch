@@ -16,7 +16,7 @@ export default class Sizes extends Component{
                 <h5>尺码</h5>
                 <p>项目符合真实的项目</p>
                 <h5>尺寸信息</h5>
-                <div className='chest-size'> <span className='chest-size-left'>模特尺寸</span> <span className='chest-size-right'>厘米</span></div>
+                <div className='chest-size'> <span className='chest-size-left'><a href="">模特尺寸</a></span> <span className='chest-size-right'>厘米</span></div>
                 <ul className='size-cm'>
                     <li> Bust<span>95厘米</span>  </li>
                     <li> Height<span>186厘米</span> </li>

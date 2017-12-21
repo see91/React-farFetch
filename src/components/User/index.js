@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
 import './style/Personal.less'
+
 export default class User extends Component {
     render() {
         return (
             <div className="Account">
-                <MHeader title={{title:'我的账户'}}/>
+                <MHeader title={{title: '我的账户'}}/>
                 <div className='content'>
-                    <ul className='NewPersonals'>
-                        <li className="clicks"
-                            onClick={()=>{
-                                this. props.history.push("/login")
+                    <ul className='NewPersonal'>
+                        <li className="Lists"
+                            onClick={() => {
+                                this.props.history.push("/login")
                             }}
                         >
                             <h4>登录或创建新账户</h4>
@@ -34,8 +35,8 @@ export default class User extends Component {
                         </li>
                         <li className="contact">
                             <p className="contactus">联系我们</p>
-                           <button className="iconfont icon-dianhua tels"></button>
-                           <button className="iconfont icon-youxiang envelope"></button>
+                            <button className="iconfont icon-dianhua tels"></button>
+                            <button className="iconfont icon-youxiang envelope"></button>
                             <p className="service">服务时间：周一至周五，北京时间09:00-18:00</p>
                         </li>
                     </ul>
@@ -44,4 +45,3 @@ export default class User extends Component {
         )
     }
 }
-

@@ -2,12 +2,16 @@ import React from 'react';
 import BannerAnim, {Element} from 'rc-banner-anim';
 import TweenOne from 'rc-tween-one';
 import './index.css';
+import NavLink from "react-router-dom/es/NavLink";
+
 
 const BgElement = Element.BgElement;
 export default class Banner extends React.Component {
     render() {
         return (
-            <BannerAnim prefixCls="banner-user">
+          <NavLink exact to="/list">
+
+          <BannerAnim prefixCls="banner-user" autoPlay>
                 {this.props.swiper.map((item, index) => (
                     <Element
                         prefixCls="banner-user-elem"
@@ -28,6 +32,7 @@ export default class Banner extends React.Component {
                     </Element>
                 ))}
             </BannerAnim>
+          </NavLink>
         );
     }
 }

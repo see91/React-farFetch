@@ -23,27 +23,6 @@ import Item2 from "./components/Home/SearchList/Item2";
 import Item3 from "./components/Home/SearchList/Item3";
 
 export default class Routes extends Component {
-    render() {
-        return (
-            <Router>
-                <div>
-                    <Tab/>
-                    <Switch>
-                        <Route path="/" exact component={Home}/>
-                        <Route path="/brand" exact component={Brand}/>
-                        <Route path="/wishList" exact component={WishList}/>
-                        <Route path="/user" component={User}/>
-                        <Route path="/settlement" component={Settlement}/>
-                        <Route path="/harvest" component={Harvest}/>
-                        <Route path="/shoppingCars" component={ShoppingCars}/>
-                        <Route path="/login" component={Login}/>
-                        <Route path="/list" component={List}/>
-                        <Route path="/detail/:id" component={Detail}/>
-                    </Switch>
-                </div>
-            </Router>
-        )
-    }
   render() {
     return (
       <Router>
@@ -58,12 +37,11 @@ export default class Routes extends Component {
             <Route path="/detail/:id" component={Detail}/>
             <Route path="/shop" component={Shop}/>
             <Route path="/search" component={SearchList}/>
+            <Route path="/login" component={Login}/>
           </Switch>
             <Route path="/search/item1" component={Item1}/>
             <Route path="/search/item2" component={Item2}/>
             <Route path="/search/item3" component={Item3}/>
-
-
         </div>
       </Router>
     )

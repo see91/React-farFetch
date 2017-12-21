@@ -14,6 +14,7 @@ import Settlement from './components/Settlement/index'
 import Harvest from './components/Harvest/index';
 import ShoppingCars from './components/ShoppingCars/index'
 import Login from './components/Login/index';
+import NewAccount from './components/NewAccount/index';
 export default class Routes extends Component {
     render() {
         return (
@@ -29,6 +30,7 @@ export default class Routes extends Component {
                         <Route path="/harvest" component={Harvest}/>
                         <Route path="/shoppingCars" component={ShoppingCars}/>
                         <Route path="/login" component={Login}/>
+                        <Route path="/newAccount" component={NewAccount}/>
                     </Switch>
                 </div>
             </Router>

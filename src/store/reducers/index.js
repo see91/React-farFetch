@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import home from './home'
-
+import session from './session';
+import {routerReducer} from 'react-router-redux'
 let reducer = combineReducers({
-    home
+    home,session,
+    router:routerReducer
 });
 
 export default reducer

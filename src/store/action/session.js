@@ -1,18 +1,20 @@
 import * as types from '../action-types';
-import {reg, login, logout, validate} from '../../api/session'
+import {reg, login, logout, validate} from '../../api/user'
 import {push} from 'react-router-redux';
+import history from '../history';
 
 export default {
     det(user) {
+        console.log(user);
         return function (dispatch, getState) {
             reg(user).then(result => {
                 let {code, success, error} = result;
                 dispatch({
-                    type: types.det,
-                    payload: {success, error}
+                    type: types.REG,
+                    payload: result
                 });
                 if (code == 0) {
-                    dispatch(push('/home'))
+                    dispatch(push('/login'))
                 }
             })
         }
@@ -20,13 +22,13 @@ export default {
     login(user) {
         return function (dispatch, getState) {
             login(user).then(result => {
-                let {code, success, error} = result;
+                let {code, success, error, userId} = result;
                 dispatch({
                     type: types.LOGIN,
                     payload: {success, error, user}
                 });
                 if (code == 0) {
-                    dispatch(push('/login'))
+                    dispatch(push('/list'));
                 }
             })
         }

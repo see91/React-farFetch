@@ -1,11 +1,19 @@
 import React from 'react';
 import {createStore, applyMiddleware} from 'redux'
 import reducers from './reducers/index'
-import logger from 'redux-logger'
+
 import thunk from 'redux-thunk'
 import promise from 'redux-promise'
 
-let store = applyMiddleware(thunk, promise, logger)(createStore)(reducers);
+import createHistory from 'history/createHashHistory';
+
+let history = createHistory();
+import {routerMiddleware} from 'react-router-redux';
+
+let router = routerMiddleware(history);
+//路由中间件
+
+let store = applyMiddleware(router, thunk, promise)(createStore)(reducers);
 
 window.store = store;
 export default store;

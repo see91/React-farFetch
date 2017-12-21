@@ -30,6 +30,7 @@ class Detail extends Component {
                 </div>
                 <Submit/>
 
+                <Submit prdList={this.props.prdList}/>
             </div>
         )
     }

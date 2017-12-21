@@ -9,14 +9,16 @@ class NewAccount extends Component {
         let phone = this.phone.value;
         let password = this.password.value;
         this.props.det({phone: parseInt(phone), password});
+        setTimeout(() => {
+            this.props.reg.success ? alert(this.props.reg.success) : alert(this.props.reg.error)
+        }, 200)
     };
-
     render() {
         return (
             <div className="lasts">
                 <p className="NewA">创建新账户</p>
                 <input ref={input => this.phone = input} className="Names" type="text" placeholder="联系方式*"/>
-                <input ref={input => this.password = input} className="Safety" type="text" placeholder="密码*"/>
+                <input ref={input => this.password = input} className="Safety" type="password" placeholder="密码*"/>
                 <input className="Verification" type="text" placeholder="验证码*"/>
                 <button className="news">验证码</button>
                 <span className="Information">我希望以电子报以及邮件形式获取有关的Farfetch最新的动态信息</span>

@@ -21,7 +21,7 @@ class List extends Component {
     componentDidMount() {
         let initCls = {type: this.state.type, offset: this.state.offset};
         this.props.getDatas(initCls);
-        this.setState({list: this.props.getList})
+        // this.setState({list: this.props.getList})
     }
 
 
@@ -34,19 +34,22 @@ class List extends Component {
 
     chooseList = (type) => {
         setTimeout(() => {
-            this.setState({type})
+            this.setState({type});
             let newCls = {type: this.state.type, offset: this.state.offset};
             this.props.getDatas(newCls);
+            this.setState({offset: this.props.list.getList.offset})
         }, 500)
-    }
+    };
 
     render() {
+        let Lists = this.props.list.getList;
         let arr = [];
-        let prdList = this.props.list.getList.prdList;
-        for (let i in prdList) {
-            arr.push(prdList[i]);
+        for (let i in Lists.List) {
+            arr.push(Lists.List[i]);
         }
-        console.log(arr);
+
+
+        // let {hasMore, isLoading, getList} = this.props.list.getList;
         return (
             <div>
                 <MHeader title={{title: '列表页'}}/>
@@ -71,13 +74,16 @@ class List extends Component {
                     </div>
                     <div>
                         {
-                            this.props.list.getList.hasMore ?
-                                <div className="load-more">
+                            Lists.hasMore ?
+                                <div onClick={() => {
+                                    let newCls = {type: this.state.type, offset: this.state.offset};
+                                    console.log(this.state.offset);
+                                    this.props.getDatas(newCls);
+                                }} className="load-more">
                                     加载更多
                                 </div> : <div className="load-more">
                                     别扯了，到底了
                                 </div>
-
                         }
                     </div>
                 </div>

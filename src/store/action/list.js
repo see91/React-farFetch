@@ -2,7 +2,6 @@ import * as types from '../action-types';
 
 import {getData,getCurrentList} from '../../api/list'
 
-let info = {offset: 5, id: 20};
 let actions = {
     getDatas(cls) {
         return function (dispatch, getState) {

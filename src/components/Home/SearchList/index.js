@@ -24,8 +24,8 @@ export default class SearchList extends Component{
                 <form>
                   <img src={fangda}/>
                   <img src={kok}/>
-                <input type="text" placeholder="搜索设计师品牌、商品等" onFocus={this.handleFocus} onBlur={this.handleBlur}/>
-                  <NavLink exact to="/">
+                <input type="text" placeholder="搜索设计师品牌、商品等" onFocus={this.handleFocus} onBlur={this.handleBlur} autoFocus="autofocus"/>
+                  <NavLink exact to="/home">
                   <span>取消</span>
                   </NavLink>
                 </form>

@@ -2,15 +2,15 @@ import React,{Component} from 'react';
 import NavLink from "react-router-dom/es/NavLink";
 import './index.less';
 import {connect} from 'react-redux'
-import action from '../../store/action/home'
+import action from '../../../../store/action/home'
 
- class Choose extends Component{
+ class HomeMain1 extends Component{
    componentDidMount() {
 this.props.reqChoose()
    }
     render(){
       return (
-            <div className="home-main">
+            <div className="home-main-db">
                 <div>特别为您推荐的卫衣及针织衫
                   <NavLink exact to='/list'>
                   <h6>选购全部
@@ -38,4 +38,4 @@ this.props.reqChoose()
 export default connect (
   state=>state,
   action
-)(Choose)
+)(HomeMain1)

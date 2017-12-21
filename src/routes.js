@@ -17,6 +17,7 @@ import SearchList from "./components/Home/SearchList";
 import Item1 from "./components/Home/SearchList/Item1";
 import Item2 from "./components/Home/SearchList/Item2";
 import Item3 from "./components/Home/SearchList/Item3";
+import Loading from "./components/Home/Loading-db";
 export default class Routes extends Component {
   render() {
     return (
@@ -24,7 +25,8 @@ export default class Routes extends Component {
         <div>
           <Tab/>
           <Switch>
-            <Route path="/" exact component={Home}/>
+            <Route path="/home" exact component={Home}/>
+            <Route path="/" exact component={Loading}/>
             <Route path="/brand" exact component={Brand}/>
             <Route path="/wishList" exact component={WishList}/>
             <Route path="/user" component={User}/>

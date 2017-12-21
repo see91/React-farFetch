@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import NavLink from "react-router-dom/es/NavLink";
 import './index.less'
 import {connect} from 'react-redux'
-import action from '../../../store/action/home'
+import action from '../../../../store/action/home'
 class HomeMain6 extends Component{
   componentDidMount() {
     this.props.reqList1();

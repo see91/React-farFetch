@@ -39,6 +39,7 @@ export default class Routes extends Component {
             <Route path="/shop" component={Shop}/>
             <Route path="/search" component={SearchList}/>
             <Route path="/login" component={Login}/>
+            <Route path="/newAccount" component={NewAccount}/>
           </Switch>
             <Route path="/search/item1" component={Item1}/>
             <Route path="/search/item2" component={Item2}/>

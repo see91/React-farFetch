@@ -8,7 +8,7 @@ export default class User extends Component {
             <div className="Account">
                 <MHeader title={{title: '我的账户'}}/>
                 <div className='content'>
-                    <ul className='NewPersonal'>
+                    <ul className='NewPersonals'>
                         <li className="Lists"
                             onClick={() => {
                                 this.props.history.push("/login")

@@ -9,19 +9,18 @@ class Choose extends Component{
         this.props.reqChoose()
     }
     render(){
-        console.log(this.props);
         return (
             <div className="home-main-db">
                 <div>特别为您推荐的卫衣及针织衫
                     <NavLink exact to='/list'>
                         <h6>选购全部
-                            <span> ></span>
+                            <span> > </span>
                         </h6>
                     </NavLink>
                 </div>
                 <ul>
                     <NavLink exact to="/list">
-                    {
+                   {/* {
                         this.props.home.choose.map((item,index)=>(
                             <li key={index}>
                                 <img src={item.url}/>
@@ -29,7 +28,7 @@ class Choose extends Component{
                                 <span>￥{item.price}</span>
                             </li>
                         ))
-                    }
+                    }*/}
                 </NavLink>
                 </ul>
             </div>

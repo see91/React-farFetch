@@ -242,6 +242,7 @@ app.post('/shopcart', (req, res) => {
  */
 app.post('/signup', function (req, res) {
     let {password, phone} = req.body;
+    console.log(password, phone);
     if (!phone || !password) {
         res.send({code: 1, error: '请填写手机号或密码!'});
         return;

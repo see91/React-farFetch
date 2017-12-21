@@ -1,7 +1,11 @@
-import {get,post} from './index'
+import axios from 'axios'
 
-export function det(user) {
-    return post('/api/newAccount',user)
+axios.defaults.baseURL = "http://localhost:6066";
+
+
+
+export function reg(user) {
+    return axios.post('/signup',user)
 }
 
 export function login(user) {

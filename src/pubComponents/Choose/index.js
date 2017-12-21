@@ -19,7 +19,9 @@ this.props.reqChoose()
                   </NavLink>
                 </div>
               <ul>
+                <NavLink exact to="/list">
                 {
+
                   this.props.home.choose.map((item,index)=>(
                     <li key={index}>
                       <img src={item.url}/>
@@ -28,6 +30,7 @@ this.props.reqChoose()
                     </li>
                   ))
                 }
+                </NavLink>
               </ul>
             </div>
         )

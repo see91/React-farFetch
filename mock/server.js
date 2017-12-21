@@ -102,24 +102,24 @@ app.get('/prdlist', (req, res) => {
     })
 });
 app.get('/prdlist1', (req, res) => {
-  read('./data/prdlist1.json', (data) => {
-    res.send(data)
-  })
+    read('./data/prdlist1.json', (data) => {
+        res.send(data)
+    })
 });
 app.get('/list1', (req, res) => {
-  read('./data/list1.json', (data) => {
-    res.send(data)
-  })
+    read('./data/list1.json', (data) => {
+        res.send(data)
+    })
 });
 app.get('/list2', (req, res) => {
-  read('./data/list2.json', (data) => {
-    res.send(data)
-  })
+    read('./data/list2.json', (data) => {
+        res.send(data)
+    })
 });
 app.get('/list3', (req, res) => {
-  read('./data/list3.json', (data) => {
-    res.send(data)
-  })
+    read('./data/list3.json', (data) => {
+        res.send(data)
+    })
 });
 
 app.listen(6066, () => {

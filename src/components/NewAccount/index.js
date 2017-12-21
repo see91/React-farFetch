@@ -22,6 +22,7 @@ class NewAccount extends Component {
                 <input className="Verification" type="text" placeholder="验证码*"/>
                 <button className="news">验证码</button>
                 <span className="Information">我希望以电子报以及邮件形式获取有关的Farfetch最新的动态信息</span>
+                
                 <button onClick={this.handledet} className="determine">创建账户</button>
                 <p className="statement">一旦注册即表示您同意遵守我们的条款与条件以及隐私政策</p>
                 <button onClick={() => {

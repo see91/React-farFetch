@@ -17,7 +17,6 @@ let actions = {
     getCurrentLists(type) {
         return function (dispatch, getState) {
             getCurrentList(type).then(val => {
-                console.log(val,"22222");
                 dispatch({
                     type: types.GET_CURRENTLIST,
                     payload: val

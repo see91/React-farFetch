@@ -11,4 +11,4 @@ export let getData = () => {
 };
 export let getCurrentList=(type)=>{
     return axios.post('/recommlist',type)
-}
+};

@@ -11,10 +11,13 @@ class List extends Component{
         this.state={star:true,list:null};
     }
 
+
     componentDidMount() {
         this.props.getDatas();
         this.setState({list:this.props.getList})
     }
+
+
     collection=(event)=>{
         event.target.star=!event.target.star;
         event.target.className=event.target.star?'iconfont icon-gray-star active':'iconfont icon-gray-star';
@@ -26,8 +29,6 @@ class List extends Component{
         setTimeout(()=>{
            this.setState({list:this.props.currentList.prd})
         },500)
-
-
     }
     render(){
         return (
@@ -45,7 +46,7 @@ class List extends Component{
                         <h3>SALE|近4000件商品现有4折优惠</h3>
                         <div className="list-group">
                             {
-                                this.props.getList  .map((item,index)=>(
+                                this.state.list&&this.state.list.map((item,index)=>(
                                     <Link  key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
                                         <div className='iconfont icon-gray-star ' onClick={this.collection}></div>
                                         <img src={item.url}/>

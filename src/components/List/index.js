@@ -8,12 +8,18 @@ import ListHeader from './ListHeader'
 class List extends Component{
     constructor(){
         super();
-        this.state={star:true,list:null};
+        this.state={
+            star:true,
+            list:null,
+            type:'coat',
+            offset:0
+        };
     }
 
 
     componentDidMount() {
-        this.props.getDatas();
+        let initCls={type:this.state.type,offset:this.state.offset};
+        this.props.getDatas(initCls);
         this.setState({list:this.props.getList})
     }
 
@@ -22,31 +28,34 @@ class List extends Component{
         event.target.star=!event.target.star;
         event.target.className=event.target.star?'iconfont icon-gray-star active':'iconfont icon-gray-star';
         event.preventDefault();
-    }
+    };
+
+
     chooseList=(type)=>{
-        console.log(type,"1111111");
-        this.props.getCurrentLists({classification:type});
         setTimeout(()=>{
-           this.setState({list:this.props.currentList.prd})
+            this.setState({type})
+            let newCls={type:this.state.type,offset:this.state.offset};
+            this.props.getDatas(newCls);
         },500)
     }
     render(){
+        let arr=[];
+        let prdList=this.props.list.getList.prdList;
+        for(let i in prdList){
+           arr.push(prdList[i]);
+        }
         return (
             <div>
                 <MHeader title={{title: '列表页'}}/>
-
                 <div className="contents">
                     <ListHeader
-                        // type={this.props.type}
-                        // changeType={this.props.changeType}
-
                         chooseList={this.chooseList}
                     />
                     <div className="container">
                         <h3>SALE|近4000件商品现有4折优惠</h3>
                         <div className="list-group">
                             {
-                                this.state.list&&this.state.list.map((item,index)=>(
+                                arr.map((item,index)=>(
                                     <Link  key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
                                         <div className='iconfont icon-gray-star ' onClick={this.collection}></div>
                                         <img src={item.url}/>
@@ -57,6 +66,17 @@ class List extends Component{
                             }
                         </div>
                     </div>
+                    <div>
+                        {
+                            this.props.list.getList.hasMore ?
+                                <div  className="load-more">
+                                    加载更多
+                                </div> : <div className="load-more">
+                                别扯了，到底了
+                            </div>
+
+                        }
+                    </div>
                 </div>
 
             </div>
@@ -65,6 +85,6 @@ class List extends Component{
     }
 }
 export default connect(
-    state=>state.list,
+    state=>state,
     actions
 )(List)

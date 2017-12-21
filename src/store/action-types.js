@@ -10,6 +10,10 @@ const GET_LIST2 = 'GRT_LIST2';
 const GET_LIST3 = 'GRT_LIST3';
 const GET_CHANGETYPE = 'GET_CHANGETYPE';
 const GET_GETLIST = 'GET_GETLIST';
+const REG = 'REG';
+const LOGIN='LOGIN';
+const LOGOUT='LOGOUT';
+const Validate='Validate';
 const GET_BRANDMAN = 'GET_BRANDMAN';
 const GET_BRANDWOMAN = 'GET_BRANDWOMAN';
 const GET_BRANDCHILDREN = 'GET_BRANDCHILDREN';
@@ -32,4 +36,8 @@ export {
     GET_BRANDWOMAN,
     GET_BRANDCHILDREN,
     GET_BRANDSWIPER,
+    REG,
+    LOGIN,
+    LOGOUT,
+    Validate
 }

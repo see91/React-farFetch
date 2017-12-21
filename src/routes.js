@@ -14,6 +14,7 @@ import Settlement from './components/Settlement/index'
 import Harvest from './components/Harvest/index';
 import ShoppingCars from './components/ShoppingCars/index'
 import Login from './components/Login/index';
+import NewAccount from './components/NewAccount/index';
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
 import BrandMan from "./components/Brand/BrandMan/index";
@@ -24,12 +25,14 @@ import SearchList from "./components/Home/SearchList";
 import Item1 from "./components/Home/SearchList/Item1";
 import Item2 from "./components/Home/SearchList/Item2";
 import Item3 from "./components/Home/SearchList/Item3";
+import history from './store/history';
+import {ConnectedRouter} from 'react-router-redux';
 import Loading from "./components/Home/Loading-db";
 
 export default class Routes extends Component {
     render() {
         return (
-            <Router>
+            <ConnectedRouter history={history}>
                 <div>
                     <Tab/>
                     <Switch>
@@ -42,10 +45,11 @@ export default class Routes extends Component {
                         <Route path="/detail/:id" component={Detail}/>
                         <Route path="/shop" component={Shop}/>
                         <Route path="/search" component={SearchList}/>
+                        <Route path="/login" component={Login}/>
+                        <Route path="/newAccount" component={NewAccount}/>
+                        <Route path="/shoppingcars/:id" component={ShoppingCars}/>
                         <Route path="/settlement" component={Settlement}/>
                         <Route path="/harvest" component={Harvest}/>
-                        <Route path="/shoppingCars" component={ShoppingCars}/>
-                        <Route path="/login" component={Login}/>
                         <Route path="/man" component={BrandMan}/>
                         <Route path="/woman" component={BrandWomen}/>
                         <Route path="/children" component={BrandChildren}/>
@@ -54,7 +58,7 @@ export default class Routes extends Component {
                     <Route path="/search/item2" component={Item2}/>
                     <Route path="/search/item3" component={Item3}/>
                 </div>
-            </Router>
+            </ConnectedRouter>
         )
     }
 }

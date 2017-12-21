@@ -71,7 +71,7 @@ read('./data/prdList.json', (data) => {
     }
 });
 
- */
+*/
 
 /**
  * 轮播图  返回六张轮播图图片地址
@@ -122,6 +122,8 @@ app.get('/prdlist', (req, res) => {
         res.send(newPrd)
     });
 });
+/*
+
 app.get('/prdlist1', (req, res) => {
     read('./data/prdlist1.json', (data) => {
         res.send(data)
@@ -137,6 +139,10 @@ app.get('/prdlist1', (req, res) => {
         res.send(newPrd)
     });
 });
+
+*/
+
+
 app.get('/list1', (req, res) => {
     read('./data/list1.json', (data) => {
         res.send(data)
@@ -392,30 +398,48 @@ app.get('/brand/:type', (req, res) => {
 });
 
 
+//获取用户信息
+function getUsersInfo(cb) {
+    read('./data/userInfo.json', (userInfo) => {
+        cb(userInfo);
+    });
+}
+
+/**
+ * 获取购物车商品   需要用户的用户名
+ */
+app.post('/shoppingcart', (req, res) => {
+    let {userID} = req.body;
+    if (!userID) {
+        res.send({code: 1, error: '用户未登录!'});
+        return
+    } else {
+        getUsersInfo((userInfo) => {
+            userInfo.find(item => {
+                if (item.userId == userID) {
+                    res.send({code: 0, commodity: item.commodity, success: '购物车数据获取成功!'})
+                }
+            });
+        });
+    }
+});
+
+/**
+ * 加入购物车
+ */
+app.post('/shopcart', (req, res) => {
+    let {userID, commodity} = req.body;
+    if (!userID) {
+        res.send({code: 0, error: '用户未登录!'});
+        return
+    }
+    console.log(userID);
+});
 app.listen(6066, () => {
     console.log('server success!');
 });
 
-
 /*
-
- //获取用户信息
- app.get('/user/:id', function (req, res) {
- if (!req.session.login) {
- res.json({code: 0, login: false, error: '用户未登录'});
- return
- }
- let userId = req.params.id;
- getUsersInfo(function (data) {
- let userInfo = data.find(item => item.userId == userId);
- if (userInfo) {
- res.json({code: 0, login: true, userInfo})
- } else {
- res.json({code: 1, login: true, error: '未找到该用户信息，请检查用户id是否正确'})
- }
- })
- });
-
  //退出登录
  app.get('/logout', function (req, res) {
  req.session.login = null;
@@ -437,49 +461,5 @@ app.listen(6066, () => {
  res.json({code: 1, error: '登录失败，用户名或密码错误'})
  }
  })
- });*/
-
-
-
-/*
-
-//获取用户信息
-app.get('/user/:id', function (req, res) {
-    if (!req.session.login) {
-        res.json({code: 0, login: false, error: '用户未登录'});
-        return
-    }
-    let userId = req.params.id;
-    getUsersInfo(function (data) {
-        let userInfo = data.find(item => item.userId == userId);
-        if (userInfo) {
-            res.json({code: 0, login: true, userInfo})
-        } else {
-            res.json({code: 1, login: true, error: '未找到该用户信息，请检查用户id是否正确'})
-        }
-    })
-});
-
-//退出登录
-app.get('/logout', function (req, res) {
-    req.session.login = null;
-    res.json({code: 0, success: '已退出'})
-});
-//登录，设置一个session：login(true/false)
-app.post('/login', function (req, res) {
-    let {userName, password} = req.body;
-    if (!userName || !password) {
-        res.json({code: 1, error: '请按API文档规定请求'})
-    }
-    getUsersInfo(function (data) {
-        let userInfo = data.find(item => (item.userName == userName && item.password == password
-        ));
-        if (userInfo) {
-            req.session.login = true;
-            res.json({code: 0, success: '登录成功', userId: userInfo.userId})
-        } else {
-            res.json({code: 1, error: '登录失败，用户名或密码错误'})
-        }
-    })
-});*/
-
+ });
+*/

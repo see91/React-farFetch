@@ -8,7 +8,6 @@ class Choose extends Component {
     componentDidMount() {
         this.props.reqChoose()
     }
-
     render() {
         return (
             <div className="home-main">
@@ -31,7 +30,7 @@ class Choose extends Component {
                   ))
                 }
                 </NavLink>
-              </ul>
+                </ul>
             </div>
         )
     }

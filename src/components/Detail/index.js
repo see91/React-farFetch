@@ -10,6 +10,7 @@ import Recommend from "./Recommend/index";
 import actions from "../../store/action/detail";
 import {connect} from 'react-redux'
 
+
 class Detail extends Component {
     componentDidMount() {
         let id = this.props.match.params.id;
@@ -26,6 +27,8 @@ class Detail extends Component {
                     <Introduce description={this.props.prdList.description}/>
                     <Recommend/>
                 </div>
+                <Submit/>
+
                 <Submit prdList={this.props.prdList}/>
             </div>
         )

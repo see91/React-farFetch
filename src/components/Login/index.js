@@ -11,6 +11,7 @@ class Login extends Component {
         };
         this.props.login(userInfo)
     };
+
     render() {
         return (
             <div className="title">

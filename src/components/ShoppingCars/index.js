@@ -1,20 +1,9 @@
-/*
 import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
 import {connect} from 'react-redux'
 import './style/shopping.css'
 
-export default class ShoppingCars extends Component {
-    constructor() {
-        super();
-        this.state = {
-            current: null,
-            shoppingCar: [],
-            totalNum: 0,
-            total: 0,
-        }
-    }
-
+class ShoppingCars extends Component {
     componentDidMount() {
         let id = this.props.match.params.id;
         this.props.getShopcar({id: id})
@@ -36,7 +25,7 @@ export default class ShoppingCars extends Component {
                             <p className="Numbering">:12423301</p>
                             <button className="number">数量1</button>
                             <p className="Join">☆加入愿望单</p>
-                            <p className="unitPrice">¥5,200.00</p>
+                            <p className="unitPrice">￥5,200.00</p>
                         </li>
                         <li className="Products">
                             <h5 className="Origins">一项商品产地来自美国</h5>
@@ -44,7 +33,7 @@ export default class ShoppingCars extends Component {
                             <p className="Numbering">:12423301</p>
                             <button className="number">数量1</button>
                             <p className="Join">☆加入愿望单</p>
-                            <p className="unitPrice">¥5,200.00</p>
+                            <p className="unitPrice">￥5,200.00</p>
                         </li>
                         <li className="Products">
                             <h5 className="Origins">一项商品产地来自美国</h5>
@@ -52,7 +41,7 @@ export default class ShoppingCars extends Component {
                             <p className="Numbering">:12423301</p>
                             <button className="number">数量1</button>
                             <p className="Join">☆加入愿望单</p>
-                            <p className="unitPrice">¥5,200.00</p>
+                            <p className="unitPrice">￥5,200.00</p>
                         </li>
                         <li className="one">
                             <h4>14天无理由免费退货(退款含税)</h4>
@@ -78,6 +67,7 @@ export default class ShoppingCars extends Component {
     }
 }
 
+
 export default connect(
-    state => state.detail,
-)(ShoppingCars)*/
+    state => state.detail
+)(ShoppingCars)

@@ -1,53 +1,63 @@
-import React, {Component} from 'react';
+import React,{Component} from 'react';
 import {connect} from 'react-redux'
 import actions from '../../store/action/list';
 import MHeader from '../../pubComponents/MHeader'
 import './index.less'
 import {Link} from 'react-router-dom'
-
-class List extends Component {
-    constructor() {
+import ListHeader from './ListHeader'
+class List extends Component{
+    constructor(){
         super();
-        this.state = {showList: false}
+        this.state={
+            star:true,
+            list:null,
+            type:'coat',
+            offset:0
+        };
     }
+
 
     componentDidMount() {
-        this.props.getDatas()
+        let initCls={type:this.state.type,offset:this.state.offset};
+        this.props.getDatas(initCls);
+        this.setState({list:this.props.getList})
     }
 
-    switchShow = () => {
-        this.setState({showList: !this.state.showList});
+
+    collection=(event)=>{
+        event.target.star=!event.target.star;
+        event.target.className=event.target.star?'iconfont icon-gray-star active':'iconfont icon-gray-star';
+        event.preventDefault();
+    };
+
+
+    chooseList=(type)=>{
+        setTimeout(()=>{
+            this.setState({type})
+            let newCls={type:this.state.type,offset:this.state.offset};
+            this.props.getDatas(newCls);
+        },500)
     }
-    // changeType=(event)=>{
-    //     let event=event.target.dataset.value;
-    //     this.props.changeType(type)
-    // }
-    render() {
-        console.log(this.props.getList);
+    render(){
+        let arr=[];
+        let prdList=this.props.list.getList.prdList;
+        for(let i in prdList){
+           arr.push(prdList[i]);
+        }
         return (
             <div>
                 <MHeader title={{title: '列表页'}}/>
-                <div className="content">
-                    <div className="btn">
-                        <p>商品列表</p>
-                        <button>筛选</button>
-                    </div>
+                <div className="contents">
+                    <ListHeader
+                        chooseList={this.chooseList}
+                    />
                     <div className="container">
-
                         <h3>SALE|近4000件商品现有4折优惠</h3>
                         <div className="list-group">
                             {
-
-                                this.props.getList.map((item, index) => (
-                                    <Link key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
-                                        <div onClick={this.showList} className="iconfont icon-gray-star">
-                                            {/*{*/}
-                                            {/*this.state.showList?<div className="iconfont icon-gray-star"></div>:<div className="iconfont icon-gray-star"></div>*/}
-                                            {/*}*/}
-                                        </div>
-                                        <div onClick={this.switchShow}>
-
-                                        </div>
+                                arr.map((item,index)=>(
+                                    <Link  key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
+                                        <div className='iconfont icon-gray-star ' onClick={this.collection}></div>
                                         <img src={item.url}/>
                                         <p>{item.title}</p>
                                         <b>￥{item.price}</b>
@@ -56,14 +66,25 @@ class List extends Component {
                             }
                         </div>
                     </div>
+                    <div>
+                        {
+                            this.props.list.getList.hasMore ?
+                                <div  className="load-more">
+                                    加载更多
+                                </div> : <div className="load-more">
+                                别扯了，到底了
+                            </div>
+
+                        }
+                    </div>
                 </div>
+
             </div>
 
         )
     }
 }
-
 export default connect(
-    state => state.list,
+    state=>state,
     actions
 )(List)

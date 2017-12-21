@@ -37,12 +37,11 @@ export default class Routes extends Component {
             <Route path="/detail/:id" component={Detail}/>
             <Route path="/shop" component={Shop}/>
             <Route path="/search" component={SearchList}/>
+            <Route path="/login" component={Login}/>
           </Switch>
             <Route path="/search/item1" component={Item1}/>
             <Route path="/search/item2" component={Item2}/>
             <Route path="/search/item3" component={Item3}/>
-
-
         </div>
       </Router>
     )

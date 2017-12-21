@@ -12,7 +12,6 @@ class Login extends Component {
         };
         this.props.login(userInfo);
         setTimeout(() => {
-            console.log(this.props);
             this.props.session.login.success ? alert(this.props.session.login.success) : alert(this.props.session.login.error)
         }, 200)
     };

@@ -15,7 +15,6 @@ import Harvest from './components/Harvest/index';
 import ShoppingCars from './components/ShoppingCars/index'
 import Login from './components/Login/index';
 import NewAccount from './components/NewAccount/index';
-import Profile from './components/Profile/index'
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
 import Shop from "./components/Home/Shop";
@@ -44,7 +43,6 @@ export default class Routes extends Component {
                         <Route path="/login" component={Login}/>
                         <Route path="/newAccount" component={NewAccount}/>
                         <Route path="/shoppingcars/:id" component={ShoppingCars}/>
-                        <Route path="/profile" component={Profile}/>
                     </Switch>
                     <Route path="/search/item1" component={Item1}/>
                     <Route path="/search/item2" component={Item2}/>

@@ -25,10 +25,10 @@ export default {
                 let {code, success, error, userId} = result;
                 dispatch({
                     type: types.LOGIN,
-                    payload: {success, error, user}
+                    payload: {success, error, userId}
                 });
                 if (code == 0) {
-                    dispatch(push('/list'));
+                    dispatch(push('/user'));
                 }
             })
         }

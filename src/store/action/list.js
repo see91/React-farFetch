@@ -13,7 +13,17 @@ let actions = {
                 });
             })
         }
-    }
+    },
+    getCurrentLists() {
+        return function (dispatch, getState) {
+            getCurrentList().then(val => {
+                dispatch({
+                    type: types.GET_CURRENTLIST,
+                    payload: val
+                });
+            })
+        }
+    },
 };
 
 export default actions

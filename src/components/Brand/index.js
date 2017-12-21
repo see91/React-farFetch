@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
 import './index.css'
+import boom from '../../static/img/3.jpg'
+
 import BrandMan from "./BrandMan/index";
 import BrandWomen from "./BrandWomen/index";
 import BrandChildren from "./BrandChildren/index";
@@ -15,12 +17,15 @@ export default class Brand extends Component {
         event.preventDefault();
         switch( event.target.innerText){
            case '男士' :
+               event.target.className="nav-switch active"
                this.setState({Comp:BrandMan});
                break;
             case '女士':
+                event.target.className="nav-switch active"
                 this.setState({Comp:BrandWomen});
                 break;
             case '儿童':
+                event.target.className="nav-switch active"
                 this.setState({Comp:BrandChildren});
                 break;
             default:
@@ -35,7 +40,7 @@ export default class Brand extends Component {
                 <div className="content">
                     <div className="brand">
                         <div className="nav" onClick={this.change}>
-                            <span className="nav-switch">男士</span>
+                            <span>男士</span>
                             <span>女士</span>
                             <span>儿童</span>
                         </div>
@@ -48,6 +53,7 @@ export default class Brand extends Component {
                                 </li>
                             </ul>
                         </div>
+
                         {
                             _comp?<_comp/>:null
                         }

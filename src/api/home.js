@@ -9,6 +9,8 @@ axios.interceptors.response.use((res) => {
 export let getSwiper = () => {
     return axios.get('/swiper')
 };
+
 export let getChoose = ()=>{
     return axios.get('/recommend')
 }
+

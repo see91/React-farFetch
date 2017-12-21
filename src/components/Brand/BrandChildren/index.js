@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import boom from '../../../static/img/3.jpg'
 import './index.less'
+import BrandSlidres from "../BrandSlidres/index";
 export default class BrandChildren extends Component{
     render(){
         return (
             <div className="brand-er">
+                <BrandSlidres/>
                 <h3>人气设计师品牌1</h3>
                 <ul>
                     <li>

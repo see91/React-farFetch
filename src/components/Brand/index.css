@@ -13,6 +13,7 @@
     line-height: 50px;
     width: 100%;
     border-top: 1px solid lightgray;
+    z-index: 10;
 }
 
 .nav span {
@@ -33,9 +34,9 @@
 }
 .sou-suo ul li{
     width: 90%;
-    margin: 100px auto;
-    height: 80px;
-    border: 1px solid red;
+    margin: 70px auto 0;
+    height: 55px;
+    border: 1px solid #d5d5d5;
     background-color: white;
 }
  .sou-suo ul li h4{
@@ -47,8 +48,7 @@
     margin-left: 10px;
     font-size: 14px;
 }
-/*
-.nav-switch:active{
+.nav-switch.active{
     color: black;
     border-bottom: solid;
-}*/
+}

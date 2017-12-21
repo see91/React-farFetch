@@ -1,23 +1,22 @@
-import React, {Component} from 'react';
+import React,{Component} from 'react';
 import NavLink from "react-router-dom/es/NavLink";
 import './index.less';
 import {connect} from 'react-redux'
-import action from '../../store/action/home'
+import action from '../../../../store/action/home'
 
-class Choose extends Component {
-    componentDidMount() {
-        this.props.reqChoose()
-    }
-
-    render() {
-        return (
-            <div className="home-main">
+ class HomeMain1 extends Component{
+   componentDidMount() {
+this.props.reqChoose()
+   }
+    render(){
+      return (
+            <div className="home-main-db">
                 <div>特别为您推荐的卫衣及针织衫
-                    <NavLink exact to='/list'>
-                        <h6>选购全部
-                            <span> ></span>
-                        </h6>
-                    </NavLink>
+                  <NavLink exact to='/list'>
+                  <h6>选购全部
+                    <span> ></span>
+                  </h6>
+                  </NavLink>
                 </div>
               <ul>
                 <NavLink exact to="/list">
@@ -36,8 +35,7 @@ class Choose extends Component {
         )
     }
 }
-
-export default connect(
-    state => state,
-    action
-)(Choose)
+export default connect (
+  state=>state,
+  action
+)(HomeMain1)

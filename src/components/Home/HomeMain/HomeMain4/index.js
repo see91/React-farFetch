@@ -9,7 +9,7 @@ class HomeMain4 extends Component{
   }
     render(){
         return (
-            <div className="home-main4">
+            <div className="home-main4-db">
                 <div>特 别 为 您 推 荐
                   <NavLink exact to='/list'>
                   <h6>

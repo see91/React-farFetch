@@ -7,7 +7,7 @@ export default class Tab extends Component {
         return (
             <ul className="footer">
                 <li className="Option">
-                    <NavLink exact to='/'>
+                    <NavLink exact to='/home'>
                         <i className="iconfont icon-F"></i>
                         <span>首页</span>
                     </NavLink>

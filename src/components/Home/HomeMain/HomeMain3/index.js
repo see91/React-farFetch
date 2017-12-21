@@ -5,9 +5,9 @@ import './index.less'
 export default class HomeMain3 extends Component{
     render(){
         return (
-            <div className="shop">
+            <div className="shop-db">
                 <img src={yaodai}/>
-                <div className="my-new">
+                <div className="my-new-db">
                     <h3>您 的 新 品 推 荐</h3>
                     <p>为您精挑细选的Calvin、</p>
                     <p>Klein 205W39nyc</p>

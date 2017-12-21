@@ -21,6 +21,7 @@ class HomeMain6 extends Component{
             </div>
             <ul>
               <NavLink exact to="/list">
+
               {
               this.props.home.list1.map((item,index)=>(
                 <li key={index}>
@@ -40,6 +41,8 @@ class HomeMain6 extends Component{
                 </NavLink>
               </div>
               <ul>
+                <NavLink exact to="/list">
+
                 {
                   this.props.home.list2.map((item,index)=>(
                     <li key={index}>
@@ -49,6 +52,7 @@ class HomeMain6 extends Component{
                     </li>
                   ))
                 }
+                </NavLink>
               </ul>
             </div>
             <div className="home-main6">
@@ -58,6 +62,8 @@ class HomeMain6 extends Component{
                 </NavLink>
               </div>
               <ul>
+                <NavLink exact to="/list">
+
                 {
                   this.props.home.list3.map((item,index)=>(
                     <li key={index}>
@@ -67,6 +73,7 @@ class HomeMain6 extends Component{
                     </li>
                   ))
                 }
+                </NavLink>
               </ul>
             </div>
           </div>

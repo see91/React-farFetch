@@ -10,7 +10,8 @@ export default class Banner extends React.Component {
     render() {
         return (
           <NavLink exact to="/list">
-            <BannerAnim prefixCls="banner-user" autoPlay>
+
+          <BannerAnim prefixCls="banner-user" autoPlay>
                 {this.props.swiper.map((item, index) => (
                     <Element
                         prefixCls="banner-user-elem"

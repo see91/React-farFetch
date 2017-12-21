@@ -16,7 +16,8 @@ class HomeMain5 extends Component{
                   <div className="hehe"></div>
                     <div className="nin">魅力年终派对造型</div>
                     <ul>
-                      <NavLink exact to="list">
+                      <NavLink exact to="/list">
+
                       {
                         this.props.home.list1.map((item,index)=>(
                           <li key={index}>
@@ -38,6 +39,7 @@ class HomeMain5 extends Component{
                     <div className="nin">圣诞巧礼 - #GIVEITLIVEIT</div>
                     <ul>
                       <NavLink exact to="/list">
+
                       {
                         this.props.home.list3.map((item,index)=>(
                           <li key={index}>
@@ -59,7 +61,9 @@ class HomeMain5 extends Component{
                 <div className="nin">运动鞋殿堂 - #GIVEITLIVEIT</div>
                 <ul>
                   <NavLink exact to="/list">
+
                   {
+
                     this.props.home.list2.map((item,index)=>(
                       <li key={index}>
                         <img src={item.url}/>
@@ -80,6 +84,7 @@ class HomeMain5 extends Component{
                 <div className="nin">新季热品</div>
                 <ul>
                   <NavLink exact to="/list">
+
                   {
                     this.props.home.list1.map((item,index)=>(
                       <li key={index}>
@@ -101,6 +106,7 @@ class HomeMain5 extends Component{
                 <div className="nin">折扣精选</div>
                 <ul>
                   <NavLink exact to="/list">
+
                   {
                     this.props.home.list2.map((item,index)=>(
                       <li key={index}>

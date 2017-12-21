@@ -42,6 +42,7 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-router-page-transition": "^3.0.2",
     "react-router-redux": "^4.0.8",
     "react-swipe": "^5.1.0",
     "react-swiper": "^0.1.5",

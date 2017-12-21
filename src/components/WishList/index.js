@@ -6,7 +6,6 @@ import Imgs from './img/photo.png'
 export default class WishList extends Component {
     constructor() {
         super();
-        this.props = {};
     }
 
     render() {

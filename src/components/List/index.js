@@ -77,7 +77,6 @@ class List extends Component {
                                 </div> : <div className="load-more">
                                     别扯了，到底了
                                 </div>
-
                         }
                     </div>
                 </div>

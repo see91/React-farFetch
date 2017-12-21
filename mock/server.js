@@ -1,8 +1,8 @@
 let fs = require('fs');
 let express = require('express');
 let bodyParse = require('body-parser');
- let cookieParse = require('cookie-parser');
- let session = require('express-session');
+ // let cookieParse = require('cookie-parser');
+ // let session = require('express-session');
 let app = express();
 //设置跨域
 app.use('*', (req, res, next) => {
@@ -15,12 +15,12 @@ app.use('*', (req, res, next) => {
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({extended: true}));
 app.use(express.static(__dirname));
-app.use(cookieParse());
-app.use(session({
-    resave: true,
-    saveUninitialized: true,
-    secret: 'see91'
-}));
+// app.use(cookieParse());
+// app.use(session({
+//     resave: true,
+//     saveUninitialized: true,
+//     secret: 'see91'
+// }));
 
 /**
  * @param p 需要读取的数据文件路径

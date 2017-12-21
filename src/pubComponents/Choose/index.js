@@ -10,7 +10,7 @@ this.props.reqChoose()
    }
     render(){
       return (
-            <div className="home-main">
+            <div className="home-main-db">
                 <div>特别为您推荐的卫衣及针织衫
                   <NavLink exact to='/list'>
                   <h6>选购全部
@@ -19,6 +19,7 @@ this.props.reqChoose()
                   </NavLink>
                 </div>
               <ul>
+                <NavLink exact to="/list">
                 {
                   this.props.home.choose.map((item,index)=>(
                     <li key={index}>
@@ -28,6 +29,7 @@ this.props.reqChoose()
                     </li>
                   ))
                 }
+                </NavLink>
               </ul>
             </div>
         )

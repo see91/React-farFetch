@@ -17,7 +17,6 @@ import SearchList from "./components/Home/SearchList";
 import Item1 from "./components/Home/SearchList/Item1";
 import Item2 from "./components/Home/SearchList/Item2";
 import Item3 from "./components/Home/SearchList/Item3";
-
 export default class Routes extends Component {
   render() {
     return (
@@ -37,8 +36,6 @@ export default class Routes extends Component {
             <Route path="/search/item1" component={Item1}/>
             <Route path="/search/item2" component={Item2}/>
             <Route path="/search/item3" component={Item3}/>
-
-
         </div>
       </Router>
     )

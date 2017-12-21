@@ -12,7 +12,7 @@ class HomeMain5 extends Component{
     render(){
         return (
             <div>
-                <div className="home-main5">
+                <div className="home-main5-db">
                   <div className="hehe"></div>
                     <div className="nin">魅力年终派对造型</div>
                     <ul>
@@ -35,7 +35,7 @@ class HomeMain5 extends Component{
                         </NavLink>
                     </div>
                 </div>
-                <div className="home-main5">
+                <div className="home-main5-db">
                     <div className="nin">圣诞巧礼 - #GIVEITLIVEIT</div>
                     <ul>
                       <NavLink exact to="/list">
@@ -57,7 +57,7 @@ class HomeMain5 extends Component{
                       </NavLink>
                     </div>
                 </div>
-            <div className="home-main5">
+            <div className="home-main5-db">
                 <div className="nin">运动鞋殿堂 - #GIVEITLIVEIT</div>
                 <ul>
                   <NavLink exact to="/list">
@@ -80,7 +80,7 @@ class HomeMain5 extends Component{
                   </NavLink>
                 </div>
             </div>
-              <div className="home-main5">
+              <div className="home-main5-db">
                 <div className="nin">新季热品</div>
                 <ul>
                   <NavLink exact to="/list">
@@ -102,7 +102,7 @@ class HomeMain5 extends Component{
                   </NavLink>
                 </div>
               </div>
-              <div className="home-main5">
+              <div className="home-main5-db">
                 <div className="nin">折扣精选</div>
                 <ul>
                   <NavLink exact to="/list">

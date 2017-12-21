@@ -9,7 +9,7 @@ import NavLink from "react-router-dom/es/NavLink";
 export default class SearchList extends Component{
   constructor(){
     super();
-    this.state={flag:false}
+    this.state={flag:false,word:''}
   }
   handleFocus = ()=>{
       this.setState({flag:true})

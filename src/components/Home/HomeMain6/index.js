@@ -13,7 +13,7 @@ class HomeMain6 extends Component{
         return (
           <div>
             <div className="love">您可能会喜欢... ...</div>
-          <div className="home-main6">
+          <div className="home-main6-db">
             <div>CALVIN KLEIN 205W39NYC
               <NavLink exact to="/list">
               <h6>选购全部<span> ></span></h6>
@@ -34,7 +34,7 @@ class HomeMain6 extends Component{
               </NavLink>
             </ul>
           </div>
-            <div className="home-main6">
+            <div className="home-main6-db">
               <div>AMI ALEXANDER MATTIUSSI
                 <NavLink exact to="/list">
                   <h6>选购全部<span> ></span></h6>
@@ -55,7 +55,7 @@ class HomeMain6 extends Component{
                 </NavLink>
               </ul>
             </div>
-            <div className="home-main6">
+            <div className="home-main6-db">
               <div>OFF-WHITE
                 <NavLink exact to="/list">
                   <h6>选购全部<span> ></span></h6>

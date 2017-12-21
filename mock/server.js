@@ -367,6 +367,7 @@ app.get('/user/:id', function (req, res) {
 /**
  *获取 男子 女子 儿童 推荐数据
  */
+
 app.get('/brand/:type', (req, res) => {
     let type = req.params.type;
     switch (type) {

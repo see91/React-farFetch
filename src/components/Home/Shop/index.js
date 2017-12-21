@@ -1,4 +1,6 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
+import MHeader from "../../../pubComponents/MHeader/index";
+import './index.less'
 import NavLink from "react-router-dom/es/NavLink";
 import './index.less';
 export default class Shop extends Component{

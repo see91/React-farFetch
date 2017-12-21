@@ -2,7 +2,7 @@ import * as types from '../../action-types'
 
 let initState = {
     getList: [],
-    currentList:0
+    currentList: 0
 };
 
 

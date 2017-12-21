@@ -2,11 +2,10 @@ import * as types from '../action-types';
 
 import {getData} from '../../api/list'
 
-let info = {offset: 5, id: 20};
 let actions = {
-    getDatas() {
+    getDatas(cls) {
         return function (dispatch, getState) {
-            getData(info).then(date => {
+            getData(cls).then(date => {
                 dispatch({
                     type: types.GET_DATALIST,
                     payload: date

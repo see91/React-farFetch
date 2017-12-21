@@ -97,6 +97,7 @@ app.get('/recommend', (req, res) => {
  * 返回分类列表数据
  * 需要参数 classification 的分类
  */
+/*
 app.post('/recommlist', (req, res) => {
     let {classification, offset} = req.body;
     read('./data/prdList.json', (data) => {
@@ -105,15 +106,22 @@ app.post('/recommlist', (req, res) => {
         res.send(prd ? {code: 0, prd, success: `商品'${classification}'获取成功`} : {code: 1, error: '暂无该商品'});
     });
 });
+*/
 
 /**
  * 返回所有商品数据
  */
 app.get('/prdlist', (req, res) => {
-    let {offset} = req.body;
-    read('./data/prdList.json', (s) => {
-        res.send(s)
-    })
+    let {type, offset = 0, limit = 5} = req.query;
+    offset = isNaN(offset) ? 0 : parseInt(offset);
+    limit = isNaN(limit) ? 0 : parseInt(limit);
+    let newPrd = {};
+    read('./data/prdList.json', (data) => {
+        newPrd.prdList = data.filter(item => item.classification == type || type == '');
+        newPrd.hasMore = limit + offset < newPrd.prdList.length;
+        newPrd.prdList = newPrd.prdList.slice(offset, offset + limit);
+        res.send(newPrd)
+    });
 });
 
 /**
@@ -130,9 +138,7 @@ app.post('/prddetail', (req, res) => {
     }
 });
 
-
 /*购物车商品数据
-
 app.post('/shoppingcars', (req, res) => {
   let {id} = req.body;
   if (id) {
@@ -268,11 +274,6 @@ app.post('/signup', function (req, res) {
     })
 });
 
-app.get('/prdlist1', (req, res) => {
-    read('./data/prdlist1.json', (data) => {
-        res.send(data)
-    })
-});
 
 /**
  * 登录
@@ -294,16 +295,28 @@ app.post('/login', function (req, res) {
         }
     })
 });
+
+/**
+ * 虎子
+ */
+app.get('/prdlist1', (req, res) => {
+    read('./data/prdlist1.json', (data) => {
+        res.send(data)
+    })
+});
+
 app.get('/list1', (req, res) => {
     read('./data/list1.json', (data) => {
         res.send(data)
     })
 });
+
 app.get('/list2', (req, res) => {
     read('./data/list2.json', (data) => {
         res.send(data)
     })
 });
+
 app.get('/list3', (req, res) => {
     read('./data/list3.json', (data) => {
         res.send(data)
@@ -314,12 +327,38 @@ app.get('/list3', (req, res) => {
  * 获取用户信息
  */
 app.get('/user/:id', function (req, res) {
-    console.log(req.session.login);
     if (!req.session.login) {
         res.send({code: 0, login: false, error: '用户未登录'});
         return
     }
     let userId = req.params.id;
+});
+
+
+/**
+ *获取 男子 女子 儿童 推荐数据
+ */
+app.get('/brand/:type', (req, res) => {
+    let type = req.params.type;
+    switch (type) {
+        case 'man':
+            read('./Brand/man.json', (data) => {
+                res.send({code: 0, data, success: `数据${type}获取成功!`});
+            });
+            break;
+        case 'woman':
+            read('./Brand/woman.json', (data) => {
+                res.send({code: 0, data, success: `数据${type}获取成功!`});
+            });
+            break;
+        case 'children':
+            read('./Brand/children.json', (data) => {
+                res.send({code: 0, data, success: `数据${type}获取成功!`});
+            });
+            break;
+        default :
+            return {code: 1, error: '未发现该数据!'}
+    }
 });
 
 
@@ -345,7 +384,6 @@ app.get('/user/:id', function (req, res) {
             res.json({code: 1, login: true, error: '未找到该用户信息，请检查用户id是否正确'})
         }
     })
-
 });
 
 //退出登录

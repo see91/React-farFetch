@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
+import {connect} from 'react-redux'
 import './style/shopping.css'
-export default class ShoppingCars extends Component {
-    constructor(){
-        super();
-        this.state={
-            current:null,
-            shoppingCar:[],
-            totalNum:0,
-            total:0,
-        }
+
+class ShoppingCars extends Component {
+    componentDidMount() {
+        let id = this.props.match.params.id;
+        this.props.getShopcar({id: id})
     }
+
     render() {
         return (
             <div className="shopping">
@@ -18,16 +16,16 @@ export default class ShoppingCars extends Component {
                 <div className='shopcarContent'>
                     <ul>
                         <li className="Billing">
-                         <p className="Subtotal">小计:</p>
-                         <p className="TotalBill">总计：</p>
+                            <p className="Subtotal">小计:</p>
+                            <p className="TotalBill">总计：</p>
                         </li>
                         <li className="Products">
-                         <h5 className="Origins">一项商品产地来自美国</h5>
-                          <p className="THOM">THOMBROWNE</p>
-                          <p className="Numbering">:12423301</p>
+                            <h5 className="Origins">一项商品产地来自美国</h5>
+                            <p className="THOM">THOMBROWNE</p>
+                            <p className="Numbering">:12423301</p>
                             <button className="number">数量1</button>
-                          <p className="Join">☆加入愿望单</p>
-                          <p className="unitPrice">¥5,200.00</p>
+                            <p className="Join">☆加入愿望单</p>
+                            <p className="unitPrice">¥5,200.00</p>
                         </li>
                         <li className="Products">
                             <h5 className="Origins">一项商品产地来自美国</h5>
@@ -57,13 +55,19 @@ export default class ShoppingCars extends Component {
                             <button className='iconfont icon-youxiang email'></button>
                         </li>
                         <button className="Settle"
-                                onClick={()=>{
-                                    this. props.history.push("/settlement")
+                                onClick={() => {
+                                    this.props.history.push("/settlement")
                                 }}
-                        >去结算</button>
+                        >去结算
+                        </button>
                     </ul>
                 </div>
             </div>
         )
     }
 }
+
+
+export default connect(
+    state => state.detail
+)(ShoppingCars)

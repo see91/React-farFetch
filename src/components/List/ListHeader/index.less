@@ -1,34 +1,52 @@
 .btn {
-    width: 100%;
+  width: 100%;
+  background: #fff;
+  p {
+    display: inline-block;
+  }
+  button {
+    outline: none;
+    width: 60px;
+    height: 25px;
     background: #fff;
-    p {
-      display: inline-block;
-}
-    button {
-      outline: none;
-      width: 60px;
-      height: 25px;
-      background: #fff;
-      border: 1px solid lightgray;
-      margin-left: 230px;
-    }
-  .menu-list{
-
-    left:0;
-    top:56px;
-    width:100%;
+    border: 1px solid lightgray;
+    margin-left: 230px;
+  }
+  .menu-list {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 50px;
+    width: 100%;
     background-color: #fff;
-    li{
-      height:45px;
-      width:100%;
+    li {
+      height: 45px;
+      width: 100%;
       line-height: 45px;
       text-align: center;
-      color:#000;
-      border-top:1px solid #f5f5f5;
-      &.active{
-        color:green;
+      color: #000;
+      border-top: 1px solid #f5f5f5;
+      &.active {
+        color: green;
       }
     }
   }
-  }
+}
 
+.fade-enter {
+  opacity: 0.1;
+}
+
+.fade-enter .fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit .fade-exit-active {
+  opacity: 0.1;
+  transition: opacity 1000ms ease-in-out;
+}

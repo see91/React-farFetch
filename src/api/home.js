@@ -22,4 +22,3 @@ export let getList3 = () => {
     return axios.get('/list3')
 }
 
-

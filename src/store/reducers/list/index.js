@@ -28,6 +28,13 @@ export default function (state = initState, action) {
                 ...state,
                 currentList: action.payload
             };
+            case types.GET_COLLECT:
+            console.log(action.payload);
+            return {
+                ...state,
+                collectList: action.payload
+            };
+
         default:
             return state
     }

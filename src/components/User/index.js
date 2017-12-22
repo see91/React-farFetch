@@ -8,7 +8,7 @@ export default class User extends Component {
             <div className="Account">
                 <MHeader title={{title: '我的账户'}}/>
                 <div className='content'>
-                    <ul className='NewPersonal'>
+                    <ul className='NewPersonals'>
                         <li className="Lists"
                             onClick={() => {
                                 this.props.history.push("/login")
@@ -24,8 +24,8 @@ export default class User extends Component {
                             <p className="Language">语言与交易货币将依照您选择的国家而定</p>
                             <span className="Buy">选购男士/女士</span>
                             <form action="" method="get">
-                                <label>男士<input className="Fruit mans" type="radio" value=""/></label>
-                                <label>女士<input className="Fruit girl" type="radio" value=""/></label>
+                                <label>男士<input className=" mans" type="radio" value=""/></label>
+                                <label>女士<input className="girl" type="radio" value=""/></label>
                             </form>
                         </li>
                         <li className="MySetting">

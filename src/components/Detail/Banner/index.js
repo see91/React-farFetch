@@ -5,7 +5,6 @@ import TweenOne from 'rc-tween-one';
 
 const BgElement = Element.BgElement;
 export default class Banner extends Component {
-
     render() {
         let arr = [];
         for (let key in this.props.imgs) {

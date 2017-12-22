@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import boom from '../../../static/img/3.jpg'
 import {connect} from 'react-redux'
 import action from '../../../store/action/brand'
+import {Link} from 'react-router-dom'
 import './index.less'
 import BrandSlidres from "../BrandSlidres/index";
 class BrandChildren extends Component{
@@ -21,11 +22,13 @@ class BrandChildren extends Component{
                 <ul>
                     {
                         arr.map((item,index)=>(
-                            <li key={index}>
-                                <img src={item.url}/>
-                                <p>{item.title}</p>
-                                <span>选购全部</span>
-                            </li>
+                            <Link to="/list"  key={index}>
+                                <li>
+                                    <img src={item.url}/>
+                                    <p>{item.title}</p>
+                                    <span>选购全部</span>
+                                </li>
+                            </Link>
                         ))
                     }
                 </ul>

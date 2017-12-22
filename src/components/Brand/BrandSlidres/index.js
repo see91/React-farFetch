@@ -37,18 +37,7 @@ class BrandSlidres extends Component{
                                     </li>
                                 ))
                             }
-                           {/* <li>
-                                <img style={{height:'200px',width:'300px'}} src={boom} alt=""/>
-                            </li>
-                            <li>
-                                <img style={{height:'200px',width:'300px'}} src={boom} alt=""/>
-                            </li>
-                            <li>
-                                <img style={{height:'200px',width:'300px'}} src={boom} alt=""/>
-                            </li>
-                            <li>
-                                <img style={{height:'200px',width:'300px'}} src={boom} alt=""/>
-                            </li>*/}
+
                         </ul>
                     </div>
                 </ReactIScroll>

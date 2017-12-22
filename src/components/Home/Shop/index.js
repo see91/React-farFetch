@@ -7,7 +7,7 @@ export default class Shop extends Component{
           <div className="shopp">
             <div className="shop-header">
               <NavLink exact to='/home'>
-                <i className="iconfont icon-cuo"></i>
+                <i className="iconfont icon-cuo">X</i>
               </NavLink>
               <span>购物车</span>
             </div>

@@ -9,8 +9,7 @@ import Submit from "./Submit/index";
 import Recommend from "./Recommend/index";
 import actions from "../../store/action/detail";
 import {connect} from 'react-redux'
-import '../../../node_modules/layui-src/dist/css/layui.css'
-import '../../../node_modules/layui-src/dist/layui'
+
 
 class Detail extends Component {
     componentDidMount() {
@@ -30,6 +29,7 @@ class Detail extends Component {
                 </div>
                 <Submit/>
 
+                <Submit prdList={this.props.prdList}/>
             </div>
         )
     }

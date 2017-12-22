@@ -5,9 +5,9 @@ import './index.less'
 import {connect} from 'react-redux'
 import actions from "../../store/action/home";
 import HomeHeader from "./HomeHeader";
-import SearchBar from "../../pubComponents/SearchBar";
 import Warning from "./Warning";
 import HomeMain from "./HomeMain";
+import SearchB from "./SearchBar";
 
 class Home extends Component {
 
@@ -19,10 +19,10 @@ class Home extends Component {
         return (
             <div>
                <HomeHeader/>
-                <div className="content1">
-                <SearchBar/>
+                <div className="content-db">
+                  <SearchB/>
                 <Warning/>
-                    <div className="home-swipe">
+                    <div className="home-swipe-db">
                         <Banner swiper={this.props.swiper}/>
                     </div>
                 <HomeMain/>

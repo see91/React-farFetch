@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {
-  HashRouter as Router,
-  Route,
-  Switch
+    HashRouter as Router,
+    Route,
+    Switch
 } from 'react-router-dom';
 import Home from "./components/Home/index";
 import User from "./components/User/index";
@@ -14,6 +14,7 @@ import Settlement from './components/Settlement/index'
 import Harvest from './components/Harvest/index';
 import ShoppingCars from './components/ShoppingCars/index'
 import Login from './components/Login/index';
+import NewAccount from './components/NewAccount/index';
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
 import BrandMan from "./components/Brand/BrandMan/index";
@@ -24,15 +25,17 @@ import SearchList from "./components/Home/SearchList";
 import Item1 from "./components/Home/SearchList/Item1";
 import Item2 from "./components/Home/SearchList/Item2";
 import Item3 from "./components/Home/SearchList/Item3";
+import Loading from "./components/Home/Loading-db";
+import history from './store/history';
+import {ConnectedRouter} from 'react-router-redux';
 
 export default class Routes extends Component {
     render() {
         return (
-            <Router>
+            <ConnectedRouter history={history}>
                 <div>
                     <Tab/>
                     <Switch>
-                        <Route path="/" exact component={Home}/>
                         <Route path="/brand" exact component={Brand}/>
                         <Route path="/wishList" exact component={WishList}/>
                         <Route path="/user" component={User}/>
@@ -47,12 +50,17 @@ export default class Routes extends Component {
                         <Route path="/shop" component={Shop}/>
                         <Route path="/search" component={SearchList}/>
                         <Route path="/children" component={BrandChildren}/>
+                        <Route path="/home" exact component={Home}/>
+                        <Route path="/" exact component={Loading}/>
+                        <Route path="/brand" exact component={Brand}/>
+                        <Route path="/wishList" exact component={WishList}/>
+                        <Route path="/newAccount" component={NewAccount}/>
                     </Switch>
                     <Route path="/search/item1" component={Item1}/>
                     <Route path="/search/item2" component={Item2}/>
                     <Route path="/search/item3" component={Item3}/>
                 </div>
-            </Router>
+            </ConnectedRouter>
         )
     }
 }

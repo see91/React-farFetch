@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import NavLink from "react-router-dom/es/NavLink";
 import '../style/tab.less'
+
 export default class Tab extends Component {
     render() {
         return (
             <ul className="footer">
                 <li className="Option">
-                    <NavLink exact to='/'>
+                    <NavLink exact to='/home'>
                         <i className="iconfont icon-F"></i>
                         <span>首页</span>
                     </NavLink>

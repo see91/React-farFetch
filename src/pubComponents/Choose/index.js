@@ -4,39 +4,38 @@ import './index.less';
 import {connect} from 'react-redux'
 import action from '../../store/action/home'
 
- class Choose extends Component{
-   componentDidMount() {
-this.props.reqChoose()
-   }
+class Choose extends Component{
+    componentDidMount() {
+        this.props.reqChoose()
+    }
     render(){
-      return (
-            <div className="home-main">
+        return (
+            <div className="home-main-db">
                 <div>特别为您推荐的卫衣及针织衫
-                  <NavLink exact to='/list'>
-                  <h6>选购全部
-                    <span> ></span>
-                  </h6>
-                  </NavLink>
+                    <NavLink exact to='/list'>
+                        <h6>选购全部
+                            <span> > </span>
+                        </h6>
+                    </NavLink>
                 </div>
-              <ul>
-                <NavLink exact to="/list">
-                {
-
-                  this.props.home.choose.map((item,index)=>(
-                    <li key={index}>
-                      <img src={item.url}/>
-                      <p>{item.title}</p>
-                      <span>￥{item.price}</span>
-                    </li>
-                  ))
-                }
+                <ul>
+                    <NavLink exact to="/list">
+                   {/* {
+                        this.props.home.choose.map((item,index)=>(
+                            <li key={index}>
+                                <img src={item.url}/>
+                                <p>{item.title}</p>
+                                <span>￥{item.price}</span>
+                            </li>
+                        ))
+                    }*/}
                 </NavLink>
-              </ul>
+                </ul>
             </div>
         )
     }
 }
 export default connect (
-  state=>state,
-  action
+    state=>state,
+    action
 )(Choose)

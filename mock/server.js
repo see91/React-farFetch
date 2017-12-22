@@ -286,7 +286,7 @@ app.post('/login', function (req, res) {
         ));
         if (userInfo) {
             req.session.login = true;
-            res.send({code: 0, success: '登录成功', userId: userInfo.userId})
+            res.send({code: 0, success: '登录成功', userId: userInfo.phone})
         } else {
             res.send({code: 1, error: '登录失败，用户名或密码错误'})
         }
@@ -395,5 +395,3 @@ app.get('/vcode', (req, res) => {
 app.listen(6066, () => {
     console.log('server success!');
 });
-
-

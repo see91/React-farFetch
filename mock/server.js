@@ -74,6 +74,7 @@ read('./data/prdList.json', (data) => {
 
 */
 
+
 /**
  * 轮播图  返回六张轮播图图片地址
  */
@@ -93,6 +94,21 @@ app.get('/recommend', (req, res) => {
     })
 });
 
+/***
+ * 返回分类列表数据
+ * 需要参数 classification 的分类
+ */
+/*
+app.post('/recommlist', (req, res) => {
+    let {classification, offset} = req.body;
+    read('./data/prdList.json', (data) => {
+        let prd = data.filter(item => item.classification == classification);
+        // let product = prd.slice(offset, offset + 5);
+        res.send(prd ? {code: 0, prd, success: `商品'${classification}'获取成功`} : {code: 1, error: '暂无该商品'});
+    });
+});
+*/
+
 /**
  * 返回所有商品数据
  */
@@ -108,6 +124,21 @@ app.get('/prdlist', (req, res) => {
         res.send(newPrd)
     });
 });
+app.get('/list1', (req, res) => {
+  read('./data/list1.json', (data) => {
+    res.send(data)
+  })
+});
+app.get('/list2', (req, res) => {
+  read('./data/list2.json', (data) => {
+    res.send(data)
+  })
+});
+app.get('/list3', (req, res) => {
+  read('./data/list3.json', (data) => {
+    res.send(data)
+  })
+});
 
 /**
  * 商品详情页数据
@@ -122,24 +153,6 @@ app.post('/prddetail', (req, res) => {
         res.send(404)
     }
 });
-
-/*购物车商品数据
-app.post('/shoppingcars', (req, res) => {
-  let {id} = req.body;
-  if (id) {
-      read('./data/prdList.json', (data) => {
-          if (data) {
-              res.cookie('name', '测试文本');
-              res.send(data.find(item => item.id == id) ? data.find(item => item.id == id) : '暂无该商品')
-          } else {
-              res.send('暂无该商品')
-          }
-      });
-  } else {
-      res.send(404)
-  }
-});
-*/
 
 /**
  * search
@@ -383,3 +396,5 @@ app.get('/vcode', (req, res) => {
 app.listen(6066, () => {
     console.log('server success!');
 });
+
+

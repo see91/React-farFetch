@@ -9,3 +9,11 @@ export let getData = (cls) => {
 export let getCurrentList = (type) => {
     return axios.post('/recommlist', type)
 }
+
+export let getCollect = (id) => {
+    return axios.post('/collection', id)
+};
+export let reqCollects = (id) => {
+    return axios.post('/collection', id)
+}
+

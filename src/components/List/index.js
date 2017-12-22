@@ -6,6 +6,9 @@ import './index.less'
 import {Link} from 'react-router-dom'
 import ListHeader from './ListHeader'
 
+
+import ListBtn from "./ListBtn/index";
+
 class List extends Component {
     constructor() {
         super();
@@ -16,7 +19,6 @@ class List extends Component {
             offset: 0
         };
     }
-
 
     componentDidMount() {
         let initCls = {type: this.state.type, offset: this.state.offset};
@@ -34,11 +36,11 @@ class List extends Component {
 
     chooseList = (type) => {
         setTimeout(() => {
-            this.setState({type})
+            this.setState({type});
             let newCls = {type: this.state.type, offset: this.state.offset};
             this.props.getDatas(newCls);
         }, 500)
-    }
+    };
 
     render() {
         let arr = [];
@@ -46,11 +48,10 @@ class List extends Component {
         for (let i in prdList) {
             arr.push(prdList[i]);
         }
-        console.log(arr);
         return (
             <div>
                 <MHeader title={{title: '列表页'}}/>
-                <div className="contents">
+                <div className="content">
                     <ListHeader
                         chooseList={this.chooseList}
                     />
@@ -70,14 +71,14 @@ class List extends Component {
                         </div>
                     </div>
                     <div>
-                        {
+                        {/*                        {
                             this.props.list.getList.hasMore ?
                                 <div className="load-more">
                                     加载更多
                                 </div> : <div className="load-more">
                                     别扯了，到底了
                                 </div>
-                        }
+                        }*/}
                     </div>
                 </div>
 

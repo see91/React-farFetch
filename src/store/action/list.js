@@ -1,6 +1,6 @@
 import * as types from '../action-types';
 
-import {getData,getCurrentList} from '../../api/list'
+import {getData, getCurrentList} from '../../api/list'
 
 let actions = {
     getDatas(cls) {
@@ -20,11 +20,22 @@ let actions = {
                     type: types.GET_CURRENTLIST,
                     payload: val
                 });
-
-
             })
         }
     },
+    getCollects(isColl, collPrd) {
+        if (isColl.isCollection == false) {
+            isColl.isCollection = '';
+        }
+        return function (dispatch, getState) {
+            getCollect(isColl, collPrd).then(val => {
+                dispatch({
+                    type: types.GET_CURRENTLIST,
+                    payload: val
+                });
+            })
+        }
+    }
 };
 
 export default actions

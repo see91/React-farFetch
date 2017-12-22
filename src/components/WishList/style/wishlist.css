@@ -1,3 +1,42 @@
+.wishlist-header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+}
+.wishlist-return{
+  position: fixed;
+  left: 10px;
+  top: 2px;
+  font-size: 16px;
+}
+.wishlist-search{
+  position: fixed;
+  right: 40px;
+  top: 2px;
+  font-size: 22px;
+
+}
+.wishlist-car{
+  position: fixed;
+  right: 10px;
+  top: 2px;
+  font-size: 22px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 #headers {
   position: relative;
   width: 100%;
@@ -33,4 +72,27 @@
   background-color: deepskyblue;
   border: none;
   color: white;
+}
+.collect-middle{
+  overflow:auto;
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  bottom: 60px;
+  background: #fff;
+  padding: 10px;
+}
+.collect-middle-img{
+  display: inline-block;
+  width:48%;
+  height: 250px;
+  padding: 5px;
+}
+.collect-middle-img img{
+  width: 100%;
+}
+.collect-middle-title{
+  padding-top:15px ;
+  text-align: center;
+  font-size: small;
 }

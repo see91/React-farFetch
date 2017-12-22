@@ -14,9 +14,7 @@ export default class HomeHeader extends Component{
                             <i className="iconfont icon-gouwu"></i>
                             </NavLink>
                     </div>
-                    {/*<div className="llod-db">*/}
-                      {/*<img src={require("../../../static/img/loading.jpg")} className="loading-db"/>*/}
-                    {/*</div>*/}
+
                 </div>
         )
     }

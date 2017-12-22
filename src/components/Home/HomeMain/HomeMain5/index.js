@@ -12,9 +12,9 @@ class HomeMain5 extends Component{
     render(){
         return (
             <div>
+              <div className="hehe-db"></div>
                 <div className="home-main5-db">
-                  <div className="hehe"></div>
-                    <div className="nin">魅力年终派对造型</div>
+                    <div className="nin-db">圣诞巧礼 - #GIVEITLIVEIT</div>
                     <ul>
                       <NavLink exact to="/list">
 
@@ -29,36 +29,14 @@ class HomeMain5 extends Component{
                       }
                       </NavLink>
                     </ul>
-                    <div className="hao">
-                        <NavLink exact to="/list">
-                        <button>选购全部</button>
-                        </NavLink>
-                    </div>
-                </div>
-                <div className="home-main5-db">
-                    <div className="nin">圣诞巧礼 - #GIVEITLIVEIT</div>
-                    <ul>
-                      <NavLink exact to="/list">
-
-                      {
-                        this.props.home.list3.map((item,index)=>(
-                          <li key={index}>
-                            <img src={item.url}/>
-                            <p>{item.title}</p>
-                            <span>￥{item.price}</span>
-                          </li>
-                        ))
-                      }
-                      </NavLink>
-                    </ul>
-                    <div className="hao">
+                    <div className="hao-db">
                       <NavLink exact to="/list">
                         <button>选购全部</button>
                       </NavLink>
                     </div>
                 </div>
             <div className="home-main5-db">
-                <div className="nin">运动鞋殿堂 - #GIVEITLIVEIT</div>
+                <div className="nin-db">运动鞋殿堂 - #GIVEITLIVEIT</div>
                 <ul>
                   <NavLink exact to="/list">
 
@@ -74,14 +52,14 @@ class HomeMain5 extends Component{
                   }
                   </NavLink>
                 </ul>
-                <div className="hao">
+                <div className="hao-db">
                   <NavLink exact to="/list">
                     <button>选购全部</button>
                   </NavLink>
                 </div>
             </div>
               <div className="home-main5-db">
-                <div className="nin">新季热品</div>
+                <div className="nin-db">新季热品</div>
                 <ul>
                   <NavLink exact to="/list">
 
@@ -96,14 +74,14 @@ class HomeMain5 extends Component{
                   }
                   </NavLink>
                 </ul>
-                <div className="hao">
+                <div className="hao-db">
                   <NavLink exact to="/list">
                     <button>选购全部</button>
                   </NavLink>
                 </div>
               </div>
               <div className="home-main5-db">
-                <div className="nin">折扣精选</div>
+                <div className="nin-db">折扣精选</div>
                 <ul>
                   <NavLink exact to="/list">
 
@@ -118,7 +96,29 @@ class HomeMain5 extends Component{
                   }
                   </NavLink>
                 </ul>
-                <div className="hao">
+                <div className="hao-db">
+                  <NavLink exact to="/list">
+                    <button>选购全部</button>
+                  </NavLink>
+                </div>
+              </div>
+              <div className="home-main5-db">
+                <div className="nin-db">折扣精选</div>
+                <ul>
+                  <NavLink exact to="/list">
+
+                    {
+                      this.props.home.list3.map((item,index)=>(
+                        <li key={index}>
+                          <img src={item.url}/>
+                          <p>{item.title}</p>
+                          <span>￥{item.price}</span>
+                        </li>
+                      ))
+                    }
+                  </NavLink>
+                </ul>
+                <div className="hao-db">
                   <NavLink exact to="/list">
                     <button>选购全部</button>
                   </NavLink>

@@ -10,26 +10,28 @@ import actions from "../../store/action/brand";
 import {connect} from "react-redux"
 import SearchBar from "../../pubComponents/SearchBar/index";
 
- class Brand extends Component {
-    constructor(){
+class Brand extends Component {
+    constructor() {
         super();
-        this.state = {Comp:BrandMan};
+        this.state = {Comp: BrandMan};
     }
-    change=(event)=>{
-        switch( event.target.innerText){
-           case '男士' :
-               this.setState({Comp:BrandMan});
-               break;
+
+    change = (event) => {
+        switch (event.target.innerText) {
+            case '男士' :
+                this.setState({Comp: BrandMan});
+                break;
             case '女士':
-                this.setState({Comp:BrandWomen});
+                this.setState({Comp: BrandWomen});
                 break;
             case '儿童':
-                this.setState({Comp:BrandChildren});
+                this.setState({Comp: BrandChildren});
                 break;
             default:
-                this.setState({Comp:BrandMan});
-       }
+                this.setState({Comp: BrandMan});
+        }
     };
+
     render() {
         let _comp = this.state.Comp;
         console.log(this.props);
@@ -43,21 +45,20 @@ import SearchBar from "../../pubComponents/SearchBar/index";
                 <div className="content">
                     <div className="brand">
                         <div className="nav" onClick={this.change}>
-                            <span className={"nav-switch "+(this.props.type=="man"?"active":"")}>男士</span>
-                            <span className={"nav-switch "+(this.props.type=="woman"?"active":"")}>女士</span>
-                            <span className={"nav-switch "+(this.props.type=="children"?"active":"")}>儿童</span>
+                            <span className={"nav-switch " + (this.props.type == "man" ? "active" : "")}>男士</span>
+                            <span className={"nav-switch " + (this.props.type == "woman" ? "active" : "")}>女士</span>
+                            <span className={"nav-switch " + (this.props.type == "children" ? "active" : "")}>儿童</span>
                         </div>
                         <Link to='/search/item2' className="sou-suo">
                             <ul>
                                 <li>
-                                    <h4>搜索品牌名称A-Z</h4>
-                                    <span>Saint Laurent,ValentinoGucci与2000多个设计师...</span>
-                                    <i className="iconfont icon-arrow-right"></i>
+                                    <h5 className="h5">搜索品牌名称A-Z</h5>
+                                    <i className="iconfont icon-arrow-right arrow"></i>
                                 </li>
                             </ul>
                         </Link>
                         {
-                            _comp?<_comp/>:null
+                            _comp ? <_comp/> : null
                         }
                     </div>
                 </div>
@@ -65,7 +66,8 @@ import SearchBar from "../../pubComponents/SearchBar/index";
         )
     }
 }
+
 export default connect(
-    state=>state.brand,
+    state => state.brand,
     actions
 )(Brand)

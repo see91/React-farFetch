@@ -33,9 +33,9 @@ class ListHeader extends Component {
 
     render() {
         return (
-            <div className="btn">
-                <p>商品列表</p>
-                <button onClick={this.switchShow}>筛选</button>
+            <div className="btnn">
+                <p className="list">商品列表</p>
+                <button className="filter" onClick={this.switchShow}>筛选</button>
                 <TransitionGroup>
                     {
                         this.state.showList && this.getMenuList()

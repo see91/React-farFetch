@@ -435,8 +435,35 @@ app.post('/shopcart', (req, res) => {
     }
     console.log(userID);
 });
-app.listen(6066, () => {
-    console.log('server success!');
+
+
+/**
+ * 注册
+ */
+app.post('/signup', function (req, res) {
+    let {password, phone} = req.body;
+    if (!phone || !password) {
+        res.send({code: 1, error: '请填写手机号或密码!'});
+        return;
+    }
+    getUsersInfo(function (userInfo) {
+        let flag = userInfo.some(item => item.phone == phone);
+        if (flag) {
+            res.json({code: 1, error: '该用户已经被注册了'})
+        } else {
+            let obj = {
+                userId: userInfo.length + 1,
+                password,
+                phone,
+                commodity: []
+            };
+            userInfo.push(obj);
+
+            write('./data/userInfo.json', userInfo, function () {
+                res.json({code: 0, success: '注册成功'})
+            })
+        }
+    })
 });
 
 /*
@@ -463,3 +490,107 @@ app.listen(6066, () => {
  })
  });
 */
+
+/**
+ * 登录
+ */
+app.post('/login', function (req, res) {
+    let {phone, password} = req.body;
+    if (!phone || !password) {
+        res.json({code: 1, error: '请填写手机号或密码!'});
+        return
+    }
+    getUsersInfo(function (data) {
+        let userInfo = data.find(item => (item.phone == phone && item.password == password
+        ));
+        if (userInfo) {
+            req.session.login = true;
+            res.send({code: 0, success: '登录成功', userId: userInfo.userId})
+        } else {
+            res.send({code: 1, error: '登录失败，用户名或密码错误'})
+        }
+    })
+});
+
+app.get("/logout", function (req, res) {
+    req.session.user = null;
+    res.json({code: 0, success: '退出成功'})
+});
+
+app.get('/validate', function (req, res) {
+    if (req.session.user) {
+        res.json({code: 0, user: req.session.user});
+    } else {
+        res.json({code: 1, error: "此用户未登录"})
+    }
+});
+
+/**
+ * 虎子
+ */
+app.get('/prdlist1', (req, res) => {
+    read('./data/prdlist1.json', (data) => {
+        res.send(data)
+    })
+});
+
+app.get('/list1', (req, res) => {
+    read('./data/list1.json', (data) => {
+        res.send(data)
+    })
+});
+
+app.get('/list2', (req, res) => {
+    read('./data/list2.json', (data) => {
+        res.send(data)
+    })
+});
+
+app.get('/list3', (req, res) => {
+    read('./data/list3.json', (data) => {
+        res.send(data)
+    })
+});
+
+/**
+ * 获取用户信息
+ */
+app.get('/user/:id', function (req, res) {
+    if (!req.session.login) {
+        res.send({code: 0, login: false, error: '用户未登录'});
+        return
+    }
+    let userId = req.params.id;
+});
+
+
+/**
+ *获取 男子 女子 儿童 推荐数据
+ */
+app.get('/brand/:type', (req, res) => {
+    let type = req.params.type;
+    switch (type) {
+        case 'man':
+            read('./Brand/man.json', (data) => {
+                res.send({code: 0, data, success: `数据${type}获取成功!`});
+            });
+            break;
+        case 'woman':
+            read('./Brand/woman.json', (data) => {
+                res.send({code: 0, data, success: `数据${type}获取成功!`});
+            });
+            break;
+        case 'children':
+            read('./Brand/children.json', (data) => {
+                res.send({code: 0, data, success: `数据${type}获取成功!`});
+            });
+            break;
+        default :
+            return {code: 1, error: '未发现该数据!'}
+    }
+});
+
+
+app.listen(6066, () => {
+    console.log('server success!');
+});

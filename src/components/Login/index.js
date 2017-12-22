@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './index.less';
 import {connect} from 'react-redux';
 import actions from "../../store/action/session"
+import Alert from '../../components/Alear/index'
 
 class Login extends Component {
     login = () => {
@@ -9,12 +10,15 @@ class Login extends Component {
             phone: this.phone.value,
             password: this.password.value
         };
-        this.props.login(userInfo)
+        this.props.login(userInfo);
+        setTimeout(() => {
+            this.props.session.login.success ? alert(this.props.session.login.success) : alert(this.props.session.login.error)
+        }, 200)
     };
 
     render() {
         return (
-            <div className="title">
+            < div className="title">
                 <p className="logs">登录</p>
                 <input ref={input => this.phone = input} className="address" type="text" placeholder="手机号" required/>
                 <input ref={input => this.password = input} className="encryption" type="password" placeholder="密码"/>
@@ -26,6 +30,7 @@ class Login extends Component {
                     }}
                     className="Create">创建新账户
                 </button>
+                <Alert/>
             </div>
         )
     }
@@ -34,4 +39,5 @@ class Login extends Component {
 export default connect(
     state => state,
     actions,
-)(Login)
+)
+(Login)

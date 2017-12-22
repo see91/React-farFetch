@@ -38,6 +38,7 @@
     "express-session": "^1.15.6",
     "history": "^4.7.2",
     "iscroll": "^5.2.0",
+    "jquery": "^3.2.1",
     "rc-banner-anim": "^1.0.0",
     "rc-tween-one": "^1.5.8",
     "react": "^16.2.0",

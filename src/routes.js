@@ -42,7 +42,7 @@ export default class Routes extends Component {
                         <Route path="/search" component={SearchList}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/newAccount" component={NewAccount}/>
-                        <Route path="/shoppingcars/:id" component={ShoppingCars}/>
+                        <Route path="/shoppingcars" component={ShoppingCars}/>
                     </Switch>
                     <Route path="/search/item1" component={Item1}/>
                     <Route path="/search/item2" component={Item2}/>

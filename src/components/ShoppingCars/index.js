@@ -2,13 +2,23 @@ import React, {Component} from 'react';
 import MHeader from "../../pubComponents/MHeader/index";
 import {connect} from 'react-redux'
 import './style/shopping.css'
+import actions from '../../store/action/session'
 
 class ShoppingCars extends Component {
+    constructor(){
+        super();
+        this.state={
+            products:[],
+            flag:false,
+            cart:[],
+            sum:0,
+            sumPrice:0
+        }
+    }
     componentDidMount() {
         let id = this.props.match.params.id;
-        this.props.getShopcar({id: id})
+        //this.props.getShopcar({id: id})
     }
-
     render() {
         return (
             <div className="shopping">

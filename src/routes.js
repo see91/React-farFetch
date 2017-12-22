@@ -17,6 +17,9 @@ import Login from './components/Login/index';
 import NewAccount from './components/NewAccount/index';
 import List from "./components/List/index"
 import Detail from './components/Detail/index'
+import BrandMan from "./components/Brand/BrandMan/index";
+import BrandWomen from "./components/Brand/BrandWomen/index";
+import BrandChildren from "./components/Brand/BrandChildren/index";
 import Shop from "./components/Home/Shop";
 import SearchList from "./components/Home/SearchList";
 import Item1 from "./components/Home/SearchList/Item1";
@@ -47,7 +50,13 @@ export default class Routes extends Component {
             <Route path="/login" component={Login}/>
             <Route path="/newAccount" component={NewAccount}/>
             <Route path="/shoppingcars/:id" component={ShoppingCars}/>
-
+            <Route path="/settlement" component={Settlement}/>
+            <Route path="/harvest" component={Harvest}/>
+            <Route path="/shoppingCars" component={ShoppingCars}/>
+            <Route path="/woman" component={BrandWomen}/>
+            <Route path="/search" component={SearchList}/>
+            <Route path="/children" component={BrandChildren}/>
+            <Route path="/wishList" exact component={WishList}/>
           </Switch>
           <Route path="/search/item1" component={Item1}/>
           <Route path="/search/item2" component={Item2}/>
@@ -55,5 +64,6 @@ export default class Routes extends Component {
         </div>
       </ConnectedRouter>
     )
-  }
+
+    }
 }

@@ -1,14 +1,16 @@
-.brand{
+.brand {
     width: 100%;
     height: 100%;
 }
-.search-j{
+
+.search-j {
     position: absolute;
     right: 0;
     height: 40px;
     line-height: 40px;
 }
-.search-j i{
+
+.search-j i {
     margin-right: 15px;
 }
 
@@ -39,26 +41,41 @@
     color: #d5d5d5;
 }
 
-.sou-suo ul{
+.sou-suo ul {
     width: 100%;
 }
-.sou-suo ul li{
+
+.sou-suo ul li {
     width: 90%;
     margin: 70px auto 0;
     height: 55px;
     border: 1px solid #d5d5d5;
     background-color: white;
 }
- .sou-suo ul li h4{
+
+.sou-suo ul li h4 {
     padding-top: 10px;
     margin-left: 10px;
     color: black;
 }
-.sou-suo ul li span{
+
+.sou-suo ul li span {
     margin-left: 10px;
     font-size: 14px;
 }
-.nav-switch.active{
+
+.sou-suo .h5 {
+    display: inline-block;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+
+.sou-suo .arrow {
+    float: right;
+    margin-top: 8px;
+}
+
+.nav-switch.active {
     color: #bdbdbd;
     border-bottom: solid;
 }

@@ -2,6 +2,16 @@
     width: 100%;
     height: 100%;
 }
+.search-j{
+    position: absolute;
+    right: 0;
+    height: 40px;
+    line-height: 40px;
+}
+.search-j i{
+    margin-right: 15px;
+}
+
 .nav {
     box-sizing: border-box;
     position: fixed;

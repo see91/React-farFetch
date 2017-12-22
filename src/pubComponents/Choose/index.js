@@ -18,18 +18,18 @@ class Choose extends Component {
                         </h6>
                     </NavLink>
                 </div>
-              <ul>
-                <NavLink exact to="/list">
-                {
-                  this.props.home.choose.map((item,index)=>(
-                    <li key={index}>
-                      <img src={item.url}/>
-                      <p>{item.title}</p>
-                      <span>￥{item.price}</span>
-                    </li>
-                  ))
-                }
-                </NavLink>
+                <ul>
+                    <NavLink exact to="/list">
+                        {
+                            this.props.home.choose.map((item, index) => (
+                                <li key={index}>
+                                    <img src={item.url}/>
+                                    <p>{item.title}</p>
+                                    <span>￥{item.price}</span>
+                                </li>
+                            ))
+                        }
+                    </NavLink>
                 </ul>
             </div>
         )

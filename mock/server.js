@@ -356,6 +356,13 @@ app.get("/logout", function (req, res) {
     res.json({code: 0, success: '退出成功'})
 });
 
+//获取用户信息
+function getUsersInfo(cb) {
+    read('./data/userInfo.json', (userInfo) => {
+        cb(userInfo);
+    });
+}
+
 /**
  * 校验用户是否登录
  */

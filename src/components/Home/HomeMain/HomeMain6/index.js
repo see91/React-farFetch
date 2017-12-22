@@ -12,7 +12,7 @@ class HomeMain6 extends Component{
     render(){
         return (
           <div>
-            <div className="love">您可能会喜欢... ...</div>
+            <div className="love-db">您可能会喜欢... ...</div>
           <div className="home-main6-db">
             <div>CALVIN KLEIN 205W39NYC
               <NavLink exact to="/list">

@@ -6,26 +6,24 @@ import {Link} from 'react-router-dom'
 import BrandMan from "./BrandMan/index";
 import BrandWomen from "./BrandWomen/index";
 import BrandChildren from "./BrandChildren/index";
+import actions from "../../store/action/brand";
+import {connect} from "react-redux"
+import SearchBar from "../../pubComponents/SearchBar/index";
 
-
-export default class Brand extends Component {
+ class Brand extends Component {
     constructor(){
         super();
         this.state = {Comp:BrandMan};
     }
     change=(event)=>{
-        event.preventDefault();
         switch( event.target.innerText){
            case '男士' :
-               event.target.className="nav-switch active"
                this.setState({Comp:BrandMan});
                break;
             case '女士':
-                event.target.className="nav-switch active"
                 this.setState({Comp:BrandWomen});
                 break;
             case '儿童':
-                event.target.className="nav-switch active"
                 this.setState({Comp:BrandChildren});
                 break;
             default:
@@ -34,17 +32,22 @@ export default class Brand extends Component {
     };
     render() {
         let _comp = this.state.Comp;
+        console.log(this.props);
         return (
             <div className="brand">
                 <MHeader title={{title: '品牌'}}/>
+                <div className="search-j">
+                    <Link to="/search/item2"><i className="iconfont icon-sousuo"></i></Link>
+                    <Link to="/shop"><i className="iconfont icon-gouwu"></i></Link>
+                </div>
                 <div className="content">
                     <div className="brand">
                         <div className="nav" onClick={this.change}>
-                            <span>男士</span>
-                            <span>女士</span>
-                            <span>儿童</span>
+                            <span className={"nav-switch "+(this.props.type=="man"?"active":"")}>男士</span>
+                            <span className={"nav-switch "+(this.props.type=="woman"?"active":"")}>女士</span>
+                            <span className={"nav-switch "+(this.props.type=="children"?"active":"")}>儿童</span>
                         </div>
-                        <Link to='/' className="sou-suo">
+                        <Link to='/search/item2' className="sou-suo">
                             <ul>
                                 <li>
                                     <h4>搜索品牌名称A-Z</h4>
@@ -62,3 +65,7 @@ export default class Brand extends Component {
         )
     }
 }
+export default connect(
+    state=>state.brand,
+    actions
+)(Brand)

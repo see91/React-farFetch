@@ -1,6 +1,7 @@
 .shopping {
     width: 100%;
     height: 50px;
+    position: relative;
     border-bottom: 1px solid #d0d0d0;
 }
 
@@ -11,89 +12,70 @@
     bottom: 50px;
     overflow: auto;
 }
-
-.shopcarContent ul {
+.shopping .Synthesis {
     width: 100%;
     height: 100%;
 }
-
-.shopcarContent .Billing {
+.shopping .one {
     width: 100%;
-    height: 50px;
-    border-bottom: 1px solid #d0d0d0;
+    height: 495px;
 }
-
-.shopcarContent .Products {
-    width: 100%;
-}
-
-.shopcarContent .Origins {
-    background-color: #f5f5f5;
-    height: 50px;
-    line-height: 50px;
-    color: #060606;
-}
-
-.shopcarContent .THOM, .Numbering {
-    margin: 20px 0 0 200px;
-}
-
-.shopcarContent .number {
-    width: 50px;
-    margin-left: 200px;
-}
-
-.shopcarContent .Join {
-    margin-left: 30px;
-}
-
-.shopcarContent .unitPrice {
-    display: inline-block;
-    color: #060606;
-    margin-left: 30px;
-}
-
-.shopcarContent .one {
+.shopping .Code {
     width: 100%;
     height: 130px;
-    border-top: 1px solid #d0d0d0;
-    border-bottom: 1px solid #d0d0d0;
+    padding-top: 70px;
 }
-
-.shopcarContent h4 {
-    padding: 15px 0 15px 0;
-}
-
-.shopcarContent .help {
+.shopping .Quote {
+     width: 100%;
+     height: 130px;
+ }
+.shopping .Addresss{
+    position: absolute;
+    right: 0;
+    top: 180px;
     width: 100%;
-    height: 80px;
-    border-bottom: 1px solid #d0d0d0;
+    height: 310px;
 }
-
-.shopcarContent h3 {
-    padding: 15px 0 5px 0;
+.shopping .Aftermarket{
+    width: 100%;
+    height: 100px;
 }
-
-.shopcarContent .iphone {
-    margin-top: 15px;
+.shopping .FREE{
+    width: 100%;
+}
+.shopping .Hesitate{
+    display: inline-block;
+    width:100%;
+    padding-top: 10px;
+}
+.shopping .help{
+    width: 100%;
+    height: 100%;
+}
+.shopping .Customer{
+    width: 100%;
+    padding: 5px 0 20px 0;
+}
+.shopping .perfect{
+    width:100%;
+    height: 100%;
+}
+.shopping .iphone {
     width: 50%;
     height: 50px;
 }
-
-.shopcarContent .email {
-    margin-top: 15px;
+.shopping .email {
     width: 50%;
     height: 50px;
 }
-
-.shopcarContent .Settle {
+.shopping .Settle {
+    display: inline-block;
     width: 100%;
     height: 50px;
+    border: none;
+    color: white;
+    background-color: #00B0FF;
     position: fixed;
     left: 0;
     bottom: 0;
-    text-align: center;
-    color: white;
-    background-color: deepskyblue;
-    border: none;
 }

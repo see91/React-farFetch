@@ -93,9 +93,10 @@ app.get('/recommend', (req, res) => {
     })
 });
 
-/**
+/*
  * 返回所有商品数据
  */
+
 app.get('/prdlist', (req, res) => {
     let {type, offset = 0, limit = 5} = req.query;
     offset = isNaN(offset) ? 0 : parseInt(offset);

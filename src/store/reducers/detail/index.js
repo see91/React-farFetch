@@ -5,7 +5,7 @@ let initState = {
     goodList:{}
 };
 
-export default function (state = initState, action) {
+export default function (state =initState, action) {
     switch (action.type) {
         case types.GET_PRDDETAIL:
             return {

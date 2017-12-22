@@ -12,7 +12,6 @@ import action from '../../../store/action/detail'
     }
 
     render(){
-        console.log(this.props.goodList);
         let arr=[];
         for(let i in this.props.goodList){
            arr.push(this.props.goodList[i])

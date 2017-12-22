@@ -47,7 +47,7 @@ import SearchBar from "../../pubComponents/SearchBar/index";
                             <span className={"nav-switch "+(this.props.type=="woman"?"active":"")}>女士</span>
                             <span className={"nav-switch "+(this.props.type=="children"?"active":"")}>儿童</span>
                         </div>
-                        <Link to='/' className="sou-suo">
+                        <Link to='/search/item2' className="sou-suo">
                             <ul>
                                 <li>
                                     <h4>搜索品牌名称A-Z</h4>

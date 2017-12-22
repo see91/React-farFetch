@@ -25,6 +25,7 @@ import Item3 from "./components/Home/SearchList/Item3";
 import Loading from "./components/Home/Loading-db";
 import history from './store/history';
 import {ConnectedRouter} from 'react-router-redux';
+import Loading1 from "./components/Home/Loading-db1";
 
 export default class Routes extends Component {
   render() {
@@ -34,7 +35,8 @@ export default class Routes extends Component {
           <Tab/>
           <Switch>
             <Route path="/home" exact component={Home}/>
-            <Route path="/" exact component={Loading}/>
+            <Route path="/" exact component={Loading1}/>
+            <Route path="/l" exact component={Loading}/>
             <Route path="/brand" exact component={Brand}/>
             <Route path="/wishList" exact component={WishList}/>
             <Route path="/user" component={User}/>
@@ -45,6 +47,7 @@ export default class Routes extends Component {
             <Route path="/login" component={Login}/>
             <Route path="/newAccount" component={NewAccount}/>
             <Route path="/shoppingcars/:id" component={ShoppingCars}/>
+
           </Switch>
           <Route path="/search/item1" component={Item1}/>
           <Route path="/search/item2" component={Item2}/>

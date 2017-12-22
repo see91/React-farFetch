@@ -17,6 +17,14 @@ export default class SearchList extends Component{
   handleBlur = ()=>{
       this.setState({flag:false})
   }
+  handleKeyUp= (e)=>{
+    if(e && e.keyCode===13){
+      // let val = e.target.value;
+      // console.log(val)
+      window.setTimeout("window.location='/#/list'",0);
+      }
+
+  }
     render(){
         return (
             <div className="searchH">
@@ -24,7 +32,13 @@ export default class SearchList extends Component{
                 <form>
                   <img src={fangda}/>
                   <img src={kok}/>
-                <input type="text" placeholder="搜索设计师品牌、商品等" onFocus={this.handleFocus} onBlur={this.handleBlur} autoFocus="autofocus"/>
+                <input type="text"
+                       placeholder="搜索设计师品牌、商品等"
+                       onFocus={this.handleFocus}
+                       onBlur={this.handleBlur}
+                       autoFocus="autofocus"
+                       onKeyUp={this.handleKeyUp}
+                />
                   <NavLink exact to="/home">
                   <span>取消</span>
                   </NavLink>

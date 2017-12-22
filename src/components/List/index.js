@@ -5,6 +5,8 @@ import MHeader from '../../pubComponents/MHeader'
 import './index.less'
 import {Link} from 'react-router-dom'
 import ListHeader from './ListHeader'
+import ListBtn from "./ListBtn/index";
+
 class List extends Component{
     constructor(){
         super();
@@ -15,11 +17,7 @@ class List extends Component{
         this.props.getDatas()
 
     }
-    collection=(event)=>{
-        event.target.star=!event.target.star;
-        event.target.className=event.target.star?'iconfont icon-gray-star active':'iconfont icon-gray-star';
-        event.preventDefault();
-    }
+
     render(){
         return (
             <div>
@@ -36,7 +34,7 @@ class List extends Component{
                             {
                                 this.props.getList.map((item,index)=>(
                                     <Link  key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
-                                        <div className='iconfont icon-gray-star ' onClick={this.collection}></div>
+                                       <ListBtn id={item.id}/>
                                         <img src={item.url}/>
                                         <p>{item.title}</p>
                                         <b>￥{item.price}</b>

@@ -106,6 +106,26 @@ app.get('/prdlist', (req, res) => {
         res.send(s)
     })
 });
+app.get('/prdlist1', (req, res) => {
+  read('./data/prdlist1.json', (data) => {
+    res.send(data)
+  })
+});
+app.get('/list1', (req, res) => {
+  read('./data/list1.json', (data) => {
+    res.send(data)
+  })
+});
+app.get('/list2', (req, res) => {
+  read('./data/list2.json', (data) => {
+    res.send(data)
+  })
+});
+app.get('/list3', (req, res) => {
+  read('./data/list3.json', (data) => {
+    res.send(data)
+  })
+});
 
 /**
  * 商品详情页数据
@@ -146,9 +166,9 @@ app.post('/collection', (req, res) => {
     isCollection = !!isCollection;
     let ary = [];
     read('./data/prdList.json', (data) => {
-        let prd = data.find(item => item.id.toString() === id);
+        let prd = data.find(item => item.id == id);
         read('./data/collection.json', (data) => {
-            let collPrd = data.find(item => item.id.toString() === id);
+            let collPrd = data.find(item => item.id === id);
             if (collPrd && isCollection) {
                 res.send('收藏商品已存在!')
             } else if (!collPrd && isCollection) {
@@ -157,7 +177,7 @@ app.post('/collection', (req, res) => {
                 });
                 res.send({code: 0, data, success: '商品收藏写入完成!'});
             } else if (collPrd && !isCollection) {
-                data = data.filter(item => item.id.toString() !== id) || [];
+                data = data.filter(item => item.id !== id) || [];
                 write('./data/collection.json', data, () => {
                 });
                 res.send({code: 0, data, success: '删除收藏商品成功!'})
@@ -169,6 +189,7 @@ app.post('/collection', (req, res) => {
     });
 
 });
+
 
 app.listen(6066, () => {
     console.log('server success!');

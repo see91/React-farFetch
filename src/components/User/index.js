@@ -3,6 +3,7 @@ import MHeader from "../../pubComponents/MHeader/index";
 import './style/Personal.less'
 import {connect} from 'react-redux'
 import actions from "../../store/action/session";
+
 class User extends Component {
     render() {
         console.log(this.props);
@@ -16,9 +17,11 @@ class User extends Component {
                                 this.props.history.push("/login")
                             }}
                         >
-                            <div className="Features">{this.props.session.login.userId?this.props.session.login.userId:"登录或者创建一个新账户"}
+                            <div
+                                className="Features">{this.props.session.login.userId ? this.props.session.login.userId : "登录或者创建一个新账户"}
                                 {
-                                    this.props.session.login.userId?<button className="drop">退出</button>:this.props.session.login.userId
+                                    this.props.session.login.userId ?
+                                        <button className="drop">退出</button> : this.props.session.login.userId
                                 }
                             </div>
                             <span className="View">您可以从您任何电子装置查看您的购物袋与愿望单</span>
@@ -54,7 +57,7 @@ class User extends Component {
 
 
 export default connect(
-    state=>state,
+    state => state,
     actions
 )(
     User

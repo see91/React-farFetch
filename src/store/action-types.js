@@ -1,6 +1,6 @@
 const GET_SLIDERS = 'GET_SLIDERS';
 const GET_DATALIST = 'GET_DATALIST';
-const GET_CURRENTLIST='GET_CURRENTLIST';
+const GET_CURRENTLIST = 'GET_CURRENTLIST';
 const GET_PRDDETAIL = 'GET_PRDDETAIL';
 const GET_CHOOSE = 'GET_CHOOSE';
 const GET_SHOPCARS = 'GET_SHOPCARS';
@@ -11,11 +11,14 @@ const GET_LIST3 = 'GRT_LIST3';
 const GET_CHANGETYPE = 'GET_CHANGETYPE';
 const GET_GETLIST = 'GET_GETLIST';
 const REG = 'REG';
-
-export const LOGIN='LOGIN';
-export const LOGOUT='LOGOUT';
-export const CLEAR_MESSAGES='CLEAR_MESSAGES';
-export const Validate='Validate';
+export const CLEAR_MESSAGES = 'CLEAR_MESSAGES';
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+const Validate = 'Validate';
+const GET_BRANDMAN = 'GET_BRANDMAN';
+const GET_BRANDWOMAN = 'GET_BRANDWOMAN';
+const GET_BRANDCHILDREN = 'GET_BRANDCHILDREN';
+const GET_BRANDSWIPER = 'GET_BRANDSWIPER';
 
 export {
     GET_SLIDERS,
@@ -31,4 +34,11 @@ export {
     GET_LIST3,
     GET_GETLIST,
     REG,
+    GET_BRANDMAN,
+    GET_BRANDWOMAN,
+    GET_BRANDCHILDREN,
+    GET_BRANDSWIPER,
+    LOGIN,
+    LOGOUT,
+    Validate,
 }

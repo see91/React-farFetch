@@ -5,20 +5,22 @@ import './style/shopping.css'
 import actions from '../../store/action/session'
 
 class ShoppingCars extends Component {
-    constructor(){
+    constructor() {
         super();
-        this.state={
-            products:[],
-            flag:false,
-            cart:[],
-            sum:0,
-            sumPrice:0
+        this.state = {
+            products: [],
+            flag: false,
+            cart: [],
+            sum: 0,
+            sumPrice: 0
         }
     }
+
     componentDidMount() {
         let id = this.props.match.params.id;
         //this.props.getShopcar({id: id})
     }
+
     render() {
         return (
             <div className="shopping">
@@ -35,7 +37,7 @@ class ShoppingCars extends Component {
                             <p className="Numbering">:12423301</p>
                             <button className="number">数量1</button>
                             <p className="Join">☆加入愿望单</p>
-                            <p className="unitPrice">¥5,200.00</p>
+                            <p className="unitPrice">￥5,200.00</p>
                         </li>
                         <li className="Products">
                             <h5 className="Origins">一项商品产地来自美国</h5>
@@ -43,7 +45,7 @@ class ShoppingCars extends Component {
                             <p className="Numbering">:12423301</p>
                             <button className="number">数量1</button>
                             <p className="Join">☆加入愿望单</p>
-                            <p className="unitPrice">¥5,200.00</p>
+                            <p className="unitPrice">￥5,200.00</p>
                         </li>
                         <li className="Products">
                             <h5 className="Origins">一项商品产地来自美国</h5>
@@ -51,7 +53,7 @@ class ShoppingCars extends Component {
                             <p className="Numbering">:12423301</p>
                             <button className="number">数量1</button>
                             <p className="Join">☆加入愿望单</p>
-                            <p className="unitPrice">¥5,200.00</p>
+                            <p className="unitPrice">￥5,200.00</p>
                         </li>
                         <li className="one">
                             <h4>14天无理由免费退货(退款含税)</h4>

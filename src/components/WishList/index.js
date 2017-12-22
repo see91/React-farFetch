@@ -17,7 +17,7 @@ export default class WishList extends Component {
                     <p>你的愿望单中暂无商品</p>
                     <span>点击商品图片上角的☆，即可将商品添加到您的愿望单中，您可在任何设备上查看您的愿望单</span>
                     <button onClick={() => {
-                        this.props.history.push("/shoppingCars")
+                        this.props.history.push("/home")
                     }} className="btn">立即选购
                     </button>
                 </div>

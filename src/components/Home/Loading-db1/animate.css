@@ -18,6 +18,11 @@
   animation-delay: 3s;
   animation-fill-mode: both;
 }
+.animated-db1 {
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+}
 
 
 .animated.infinite {

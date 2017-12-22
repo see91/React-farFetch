@@ -3,7 +3,6 @@ import './style/newaccount.less';
 import {connect} from 'react-redux';
 import actions from '../../store/action/session';
 import Alert from '../../components/Alear/index';
-import $ from 'jquery';
 
 class NewAccount extends Component {
     constructor() {

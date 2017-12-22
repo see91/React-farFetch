@@ -19,10 +19,10 @@ class Home extends Component {
         return (
             <div>
                <HomeHeader/>
-                <div className="content1">
+                <div className="content-db">
                   <SearchB/>
                 <Warning/>
-                    <div className="home-swipe">
+                    <div className="home-swipe-db">
                         <Banner swiper={this.props.swiper}/>
                     </div>
                 <HomeMain/>

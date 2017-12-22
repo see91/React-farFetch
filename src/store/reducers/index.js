@@ -9,6 +9,6 @@ import brand from './brand'
 let reducer = combineReducers({
     home,session,
     router:routerReducer,list, detail,brand
-});
+})
 
 export default reducer

@@ -11,6 +11,7 @@ class ListBtn extends Component {
 
     collections = (event) => {
         event.preventDefault();
+        console.log(event.target.star);
         event.target.star = !event.target.star;
         event.target.className = event.target.star ? 'iconfont icon-gray-star active' : 'iconfont icon-gray-star';
         this.setState({isCollection: !this.state.isCollection});
@@ -20,10 +21,9 @@ class ListBtn extends Component {
     };
 
     render() {
-
         return (
             <div>
-                <div className='iconfont icon-gray-star ' onClick={this.collections}></div>
+                <div className='iconfont icon-gray-star' onClick={this.collections}></div>
             </div>
         )
     }

@@ -5,9 +5,7 @@ import MHeader from '../../pubComponents/MHeader'
 import './index.less'
 import {Link} from 'react-router-dom'
 import ListHeader from './ListHeader'
-
-
-import ListBtn from "./ListBtn/index";
+import ListBtn from './ListBtn'
 
 class List extends Component {
     constructor() {
@@ -26,11 +24,14 @@ class List extends Component {
         this.setState({list: this.props.getList})
     }
 
-
     collection = (event) => {
+        event.preventDefault();
         event.target.star = !event.target.star;
         event.target.className = event.target.star ? 'iconfont icon-gray-star active' : 'iconfont icon-gray-star';
-        event.preventDefault();
+        this.setState({isCollection: !this.state.isCollection});
+        let isCollection = this.state.isCollection;
+        let id = this.props.id;
+        this.props.getCollects({isCollection, id})
     };
 
 
@@ -61,7 +62,7 @@ class List extends Component {
                             {
                                 arr.map((item, index) => (
                                     <Link key={item.id} to={{pathname: `/detail/${item.id}`, state: {item}}}>
-                                        <div className='iconfont icon-gray-star ' onClick={this.collection}></div>
+                                        <ListBtn id={item.id}/>
                                         <img src={item.url}/>
                                         <p>{item.title}</p>
                                         <b>￥{item.price}</b>

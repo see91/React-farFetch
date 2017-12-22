@@ -34,7 +34,6 @@ class Brand extends Component {
 
     render() {
         let _comp = this.state.Comp;
-        console.log(this.props);
         return (
             <div className="brand">
                 <MHeader title={{title: '品牌'}}/>

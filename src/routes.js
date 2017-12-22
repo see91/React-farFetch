@@ -28,38 +28,43 @@ import Item3 from "./components/Home/SearchList/Item3";
 import Loading from "./components/Home/Loading-db";
 import history from './store/history';
 import {ConnectedRouter} from 'react-router-redux';
+import Loading1 from "./components/Home/Loading-db1";
 
 export default class Routes extends Component {
-    render() {
-        return (
-            <ConnectedRouter history={history}>
-                <div>
-                    <Tab/>
-                    <Switch>
-                        <Route path="/home" exact component={Home}/>
-                        <Route path="/" exact component={Loading}/>
-                        <Route path="/brand" exact component={Brand}/>
-                        <Route path="/wishList" exact component={WishList}/>
-                        <Route path="/user" component={User}/>
-                        <Route path="/settlement" component={Settlement}/>
-                        <Route path="/harvest" component={Harvest}/>
-                        <Route path="/shoppingCars" component={ShoppingCars}/>
-                        <Route path="/login" component={Login}/>
-                        <Route path="/list" component={List}/>
-                        <Route path="/detail/:id" component={Detail}/>
-                        <Route path="/man" component={BrandMan}/>
-                        <Route path="/woman" component={BrandWomen}/>
-                        <Route path="/shop" component={Shop}/>
-                        <Route path="/search" component={SearchList}/>
-                        <Route path="/children" component={BrandChildren}/>
-                        <Route path="/newAccount" component={NewAccount}/>
-                        <Route path="/shop" component={Shop}/>
-                    </Switch>
-                    <Route path="/search/item1" component={Item1}/>
-                    <Route path="/search/item2" component={Item2}/>
-                    <Route path="/search/item3" component={Item3}/>
-                </div>
-            </ConnectedRouter>
-        )
+  render() {
+    return (
+      <ConnectedRouter history={history}>
+        <div>
+          <Tab/>
+          <Switch>
+            <Route path="/home" exact component={Home}/>
+            <Route path="/" exact component={Loading1}/>
+            <Route path="/l" exact component={Loading}/>
+            <Route path="/brand" exact component={Brand}/>
+            <Route path="/wishList" exact component={WishList}/>
+            <Route path="/user" component={User}/>
+            <Route path="/list" component={List}/>
+            <Route path="/detail/:id" component={Detail}/>
+            <Route path="/shop" component={Shop}/>
+            <Route path="/search" component={SearchList}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/newAccount" component={NewAccount}/>
+            <Route path="/shoppingcars/:id" component={ShoppingCars}/>
+            <Route path="/settlement" component={Settlement}/>
+            <Route path="/harvest" component={Harvest}/>
+            <Route path="/shoppingCars" component={ShoppingCars}/>
+            <Route path="/woman" component={BrandWomen}/>
+            <Route path="/search" component={SearchList}/>
+            <Route path="/children" component={BrandChildren}/>
+            <Route path="/wishList" exact component={WishList}/>
+          </Switch>
+          <Route path="/search/item1" component={Item1}/>
+          <Route path="/search/item2" component={Item2}/>
+          <Route path="/search/item3" component={Item3}/>
+        </div>
+      </ConnectedRouter>
+    )
+
     }
 }
+

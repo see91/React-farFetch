@@ -1,6 +1,9 @@
+
 import React, {Component} from 'react';
 import './index.less';
-export default class ListHeader extends Component {
+import {connect} from 'react-redux'
+import actions from '../../../store/action/list';
+ class ListHeader extends Component {
     constructor() {
         super();
         this.state = {showList: false};
@@ -10,11 +13,22 @@ export default class ListHeader extends Component {
         this.setState({showList: !this.state.showList});
     }
 
-    changeType = (event)=>{
-        let type = event.target.dataset.type;
-        console.log(type);
-        // this.props.changeType(type);
-        this.switchShow();
+     changeType = (event)=>{
+        // let type = event.target.dataset.type;
+        // this.props.getCurrentLists({classification:type});
+      /*  setTimeout(()=>{
+            let arr=[];let tr=[];
+            for(let i in this.props.getList){
+                arr.push(this.props.getList[i])
+            }
+
+            for(let i in this.props.currentList.prd){
+               tr.push(this.props.currentList.prd[i])
+            }
+           arr=tr;
+        },500)*/
+      this.props.chooseList(event.target.dataset.type)
+         this.switchShow();
     }
     getMenuList = () => (
             <ul className="menu-list" onClick={this.changeType}>
@@ -42,3 +56,7 @@ export default class ListHeader extends Component {
         )
     }
 }
+export default connect(
+    state=>state.list,
+    actions
+)(ListHeader)

@@ -11,12 +11,6 @@ class WishList extends Component {
         super();
     }
 
-
-    componentDidMount() {
-        //console.log(this.props.list.currentList.data);
-    }
-
-
     render() {
         console.log(this.props);
         let arr = [];

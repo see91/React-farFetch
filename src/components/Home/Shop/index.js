@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import MHeader from "../../../pubComponents/MHeader/index";
 import './index.less'
 import NavLink from "react-router-dom/es/NavLink";
+import './index.less';
 export default class Shop extends Component{
     render(){
         return (
           <div className="shopp">
             <div className="shop-header">
-              <NavLink exact to='/'>
+              <NavLink exact to='/home'>
                 <i className="iconfont icon-cuo"></i>
               </NavLink>
               <span>购物车</span>

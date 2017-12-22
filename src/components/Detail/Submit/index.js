@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './index.less'
 import {Link} from 'react-router-dom'
+import './index.less'
 export default class Submit extends Component {
     constructor() {
         super();

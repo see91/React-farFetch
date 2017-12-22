@@ -1,12 +1,12 @@
 import * as types from '../action-types';
 
-import {getData, getCollect,reqCollects} from '../../api/list'
+import {getData,getCurrentList} from '../../api/list'
 
 let info = {offset: 5, id: 20};
 let actions = {
-    getDatas() {
+    getDatas(cls) {
         return function (dispatch, getState) {
-            getData(info).then(date => {
+            getData(cls).then(date => {
                 dispatch({
                     type: types.GET_DATALIST,
                     payload: date
@@ -14,13 +14,15 @@ let actions = {
             })
         }
     },
-    getCurrentLists() {
+    getCurrentLists(type) {
         return function (dispatch, getState) {
-            getCurrentList().then(val => {
+            getCurrentList(type).then(val => {
                 dispatch({
                     type: types.GET_CURRENTLIST,
                     payload: val
                 });
+
+
             })
         }
     },

@@ -1,6 +1,6 @@
 import * as types from '../action-types';
 
-import {getData, getCurrentList} from '../../api/list'
+import {getData, getCurrentList, getCollect, reqCollects} from '../../api/list'
 
 let actions = {
     getDatas(cls) {
@@ -24,6 +24,7 @@ let actions = {
         }
     },
     getCollects(isColl, collPrd) {
+        console.log(isColl, collPrd);
         if (isColl.isCollection == false) {
             isColl.isCollection = '';
         }

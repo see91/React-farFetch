@@ -7,12 +7,7 @@ import actions from '../../store/action/wishlist'
 import {connect} from 'react-redux'
 
 class WishList extends Component {
-    constructor() {
-        super();
-    }
-
     render() {
-        console.log(this.props);
         let arr = [];
         for (let i in this.props.list.currentList.data) {
             arr.push(this.props.list.currentList.data[i])

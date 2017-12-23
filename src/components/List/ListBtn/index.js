@@ -20,10 +20,9 @@ class ListBtn extends Component {
     };
 
     render() {
-
         return (
             <div>
-                <div className='iconfont icon-gray-star ' onClick={this.collections}></div>
+                <div className='iconfont icon-gray-star' onClick={this.collections}></div>
             </div>
         )
     }

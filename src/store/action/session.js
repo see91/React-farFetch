@@ -5,7 +5,6 @@ import history from '../history';
 
 export default {
     det(user) {
-        console.log(user);
         return function (dispatch, getState) {
             reg(user).then(result => {
                 let {code, success, error} = result;

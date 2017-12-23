@@ -42,6 +42,7 @@
     "rc-banner-anim": "^1.0.0",
     "rc-tween-one": "^1.5.8",
     "react": "^16.2.0",
+    "react-bmap": "^1.0.57",
     "react-dom": "^16.2.0",
     "react-iscroll": "^2.0.3",
     "react-redux": "^5.0.6",

@@ -31,10 +31,12 @@ class WishList extends Component {
                         <img src={Imgs} alt=""/>
                         <p>你的愿望单中暂无商品</p>
                         <span>点击商品图片上角的☆，即可将商品添加到您的愿望单中，您可在任何设备上查看您的愿望单</span>
+                      <Link to={{pathname: '/home'}}>
                         <button onClick={() => {
                             this.props.history.push("/home")
                         }} className="btn">立即选购
                         </button>
+                      </Link>
                     </div> : <div className='collect-middle'>
                         {arr.map((item, index) => (
                             <div className='collect-middle-img' key={index}>

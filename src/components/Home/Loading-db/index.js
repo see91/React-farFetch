@@ -13,3 +13,22 @@ export default class Loading extends Component{
         )
     }
 }
+
+
+<div>
+  <img src="" alt=""/>
+  <p></p>
+  <h1></h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

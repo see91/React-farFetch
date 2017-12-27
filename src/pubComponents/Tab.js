@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './style/tab.css'
+import './style/tab.less'
 
 export default class Tab extends Component {
     render() {

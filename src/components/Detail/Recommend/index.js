@@ -1,26 +1,26 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import './index.less'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import action from '../../../store/action/detail'
 
- class Recommend extends Component{
+class Recommend extends Component {
 
     componentDidMount() {
         this.props.reqGood()
 
     }
 
-    render(){
+    render() {
         console.log(this.props.goodList);
-        let arr=[];
-        for(let i in this.props.goodList){
-           arr.push(this.props.goodList[i])
+        let arr = [];
+        for (let i in this.props.goodList) {
+            arr.push(this.props.goodList[i])
         }
         return (
 
             <div className='recommend'>
-                <Link to={{pathname:'/list'}}>
+                <Link to={{pathname: '/list'}}>
                     <div className='title'>
                         <h5 className='title-reference'>
                             特为您推荐
@@ -31,30 +31,24 @@ import action from '../../../store/action/detail'
                   </span>
                     </div>
                 </Link>
-               <div className='goods-list'>
-                   {
-                       arr.map((item, index) => (
-                           <div className='goods-top' key={index}>
-                               <div className='goods-top-left'>
-                                   <div className='goods-left-img'>
-                                       <img src={item.url}/>
-                                   </div>
-                                   <h4 className='goods-left-title'>
-                                       {item.title}
-                                   </h4>
-                                   <h5 className='goods-left-price'>
-                                       {item.classification}
-                                   </h5>
-                               </div>
-
-                           </div>
-                       ))
-
-                   }
-                 </div>
-                <div>
+                <div className='goods-list'>
                     {
+                        arr.map((item, index) => (
+                            <div className='goods-top' key={index}>
+                                <div className='goods-top-left'>
+                                    <div className='goods-left-img'>
+                                        <img src={item.url}/>
+                                    </div>
+                                    <h4 className='goods-left-title'>
+                                        {item.title}
+                                    </h4>
+                                    <h5 className='goods-left-price'>
+                                        {item.classification}
+                                    </h5>
+                                </div>
 
+                            </div>
+                        ))
 
                     }
                 </div>
@@ -62,6 +56,7 @@ import action from '../../../store/action/detail'
         )
     }
 }
+
 export default connect(
     state => state.detail,
     action

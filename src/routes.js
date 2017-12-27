@@ -23,7 +23,6 @@ import Item1 from "./components/Home/SearchList/Item1";
 import Item2 from "./components/Home/SearchList/Item2";
 import Item3 from "./components/Home/SearchList/Item3";
 import ListBtn from './components/List/ListBtn/index'
-import BrandMan from "./components/Brand/BrandMan/index";
 import BrandWomen from "./components/Brand/BrandWomen/index";
 import BrandChildren from "./components/Brand/BrandChildren/index";
 import Loading from "./components/Home/Loading-db";
@@ -63,7 +62,6 @@ export default class Routes extends Component {
                 </div>
             </ConnectedRouter>
         )
-
     }
 }
 

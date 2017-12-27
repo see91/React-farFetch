@@ -12,7 +12,7 @@ const GET_SHOPCARS = 'GET_SHOPCARS';
 const GET_CHANGETYPE = 'GET_CHANGETYPE';
 const GET_COLLECT = 'GET_COLLECT';
 const REG = 'REG';
-export const CLEAR_MESSAGES = 'CLEAR_MESSAGES';
+const CLEAR_MESSAGES = 'CLEAR_MESSAGES';
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 const Validate = 'Validate';
@@ -43,4 +43,5 @@ export {
     LOGIN,
     LOGOUT,
     Validate,
+    CLEAR_MESSAGES
 }

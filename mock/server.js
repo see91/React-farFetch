@@ -1,9 +1,8 @@
 let fs = require('fs');
 let express = require('express');
 let bodyParse = require('body-parser');
-let cookieParse = require('cookie-parser');
 let session = require('express-session');
-
+let cookieParse = require('cookie-parser');
 let app = express();
 //设置跨域
 app.use('*', (req, res, next) => {
@@ -110,10 +109,10 @@ app.post('/recommlist', (req, res) => {
 */
 
 /**
- * 返回所有商品数据
+ * 返回所有商品数据 -- 因list页面进展缓慢 暂共用
  */
 app.get('/prdlist', (req, res) => {
-    let {type, offset = 0, limit = 5} = req.query;
+    let {type, offset = 0, limit = 20} = req.query;
     offset = isNaN(offset) ? 0 : parseInt(offset);
     limit = isNaN(limit) ? 0 : parseInt(limit);
     let newPrd = {};
@@ -124,6 +123,16 @@ app.get('/prdlist', (req, res) => {
         res.send(newPrd)
     });
 });
+
+/**
+ * page home 使用
+ */
+app.get('/prdlist1', (req, res) => {
+    read('./data/prdlist1.json', (data) => {
+        res.send(data)
+    })
+});
+
 app.get('/list1', (req, res) => {
     read('./data/list1.json', (data) => {
         res.send(data)
@@ -139,6 +148,7 @@ app.get('/list3', (req, res) => {
         res.send(data)
     })
 });
+
 
 /**
  * 商品详情页数据
@@ -183,7 +193,7 @@ app.post('/collection', (req, res) => {
         read('./data/collection.json', (data) => {
             let collPrd = data.find(item => item.id === id);
             if (collPrd && isCollection) {
-                res.send('收藏商品已存在!')
+                res.send('收藏商品已存在!')  //貌似有点多余.....
             } else if (!collPrd && isCollection) {
                 data.push(prd);
                 write('./data/collection.json', data, () => {
@@ -210,7 +220,7 @@ function getUsersInfo(cb) {
 }
 
 /**
- * 获取购物车商品   需要用户的用户名
+ * 获取不同用户的购物车商品
  */
 app.post('/shoppingcart', (req, res) => {
     let {userID} = req.body;
@@ -229,7 +239,7 @@ app.post('/shoppingcart', (req, res) => {
 });
 
 /**
- * 加入购物车
+ * 加入购物车   --未完
  */
 app.post('/shopcart', (req, res) => {
     let {userID, commodity} = req.body;
@@ -293,32 +303,6 @@ app.post('/login', function (req, res) {
     })
 });
 
-/**
- * 虎子
- */
-app.get('/prdlist1', (req, res) => {
-    read('./data/prdlist1.json', (data) => {
-        res.send(data)
-    })
-});
-
-app.get('/list1', (req, res) => {
-    read('./data/list1.json', (data) => {
-        res.send(data)
-    })
-});
-
-app.get('/list2', (req, res) => {
-    read('./data/list2.json', (data) => {
-        res.send(data)
-    })
-});
-
-app.get('/list3', (req, res) => {
-    read('./data/list3.json', (data) => {
-        res.send(data)
-    })
-});
 
 /**
  * 获取用户信息
@@ -386,11 +370,6 @@ app.get('/validate', function (req, res) {
     }
 });
 
-app.get('/vcode', (req, res) => {
-    console.log(req.query);
-    let {phone} = req.query;
-
-})
 
 app.listen(6066, () => {
     console.log('server success!');

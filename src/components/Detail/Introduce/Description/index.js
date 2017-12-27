@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './index.less'
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
+
 export default class Description extends Component {
     constructor() {
         super();
@@ -11,7 +12,7 @@ export default class Description extends Component {
         this.setState({show: !this.state.show})
     }
     getMenuList = () => (
-        <CSSTransition  classNames="fade" timeout={500}>
+        <CSSTransition classNames="fade" timeout={500}>
             <div className='get-list'>
                 <p>{this.props.description}</p>
                 <div className='sharing

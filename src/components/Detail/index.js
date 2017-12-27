@@ -28,7 +28,6 @@ class Detail extends Component {
                     <Recommend/>
                 </div>
                 <Submit/>
-
                 <Submit prdList={this.props.prdList}/>
             </div>
         )
